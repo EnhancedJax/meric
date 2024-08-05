@@ -18,26 +18,7 @@
   --white: #ffffff;
   --border: #b6b6b6;
   --background: #fafcfc;
-}
-
-body {
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-}
-
-footer {
-  margin-top: auto;
-}
-
-h1,
-h2 {
-  font-family: "Syncopate", sans-serif;
-}
-
-.container {
-  max-width: 1024px;
-  margin: 0 auto;
+  --gray: #b3b3b3;
 }
 
 :dark {
@@ -47,4 +28,5 @@ h2 {
   --white: #ffffff;
   --border: #b6b6b6;
   --background: #fafcfc;
+  --gray: #b3b3b3;
 }

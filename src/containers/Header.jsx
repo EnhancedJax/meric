@@ -1,39 +1,54 @@
-import { Languages } from "lucide-react";
+import { useEffect, useState } from "react";
 import { useTranslation } from "react-i18next";
+import Button from "../components/Button";
+import LangButton from "../components/LangButton";
 
 export default function Header() {
   const { t } = useTranslation();
+  const [prevScrollPos, setPrevScrollPos] = useState(0);
+  const [visible, setVisible] = useState(true);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const currentScrollPos = window.pageYOffset;
+      setVisible(prevScrollPos > currentScrollPos);
+      setPrevScrollPos(currentScrollPos);
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, [prevScrollPos]);
 
   return (
-    <header className="bg-white py-6 px-24 h-[89px]">
-      <nav className="mx-auto flex justify-between items-center">
-        <a href="/" className="h-full flex items-center gap-2">
+    <header
+      className={`w-full bg-white py-6 px-24 h-[89px] ${
+        visible ? "fixed" : "hidden"
+      }`}
+    >
+      <nav className="relative flex items-center justify-between w-full mx-auto">
+        <a
+          href="/"
+          className="absolute -translate-x-1/2 -translate-y-1/2 left-1/2 top-1/2"
+        >
           <img src="logo.png" alt="logo" className="h-10" />
-          <img src="logo_text.png" alt="logo" className="h-3" />
         </a>
-        <div className="flex items-center gap-[30px]">
-          <ul className="flex items-center gap-5">
-            <a href="#">
-              <li className="">{t("header.about")}</li>
-            </a>
-            <a href="#">
-              <li className="">{t("header.services")}</li>
-            </a>
-            <a href="#">
-              <li className="">{t("header.production")}</li>
-            </a>
-            <a href="#">
-              <li className="">{t("header.clients")}</li>
-            </a>
-          </ul>
-          <button className="px-10 py-2.5 bg-secondary rounded-tl-[35px] rounded-br-[35px] flex items-center">
-            <span className="text-white  font-bold">
-              {t("header.letsTalk")}
-            </span>
-          </button>
-          <button className="p-2.5 rounded-tl-[35px] rounded-tr-[35px] rounded-br-[35px] border-2 border-[#282b50] flex items-center">
-            <Languages />
-          </button>
+        <ul className="flex items-center gap-5 text-sm">
+          <a href="#">
+            <li className="">{t("header.about")}</li>
+          </a>
+          <a href="#">
+            <li className="">{t("header.services")}</li>
+          </a>
+          <a href="#">
+            <li className="">{t("header.production")}</li>
+          </a>
+          <a href="#">
+            <li className="">{t("header.clients")}</li>
+          </a>
+        </ul>
+        <div className="flex gap-5">
+          <Button>{t("header.letsTalk")}</Button>
+          <LangButton />
         </div>
       </nav>
     </header>

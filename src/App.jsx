@@ -2,6 +2,7 @@ import { ThemeProvider } from "next-themes";
 import React from "react";
 import { I18nextProvider } from "react-i18next";
 import { Route, BrowserRouter as Router, Routes } from "react-router-dom";
+import "./App.css";
 import Footer from "./containers/Footer";
 import Header from "./containers/Header";
 import i18n from "./i18n";
