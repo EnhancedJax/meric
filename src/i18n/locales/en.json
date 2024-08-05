@@ -1,0 +1,17 @@
+{
+  "header": {
+    "about": "About",
+    "services": "Services",
+    "production": "Production",
+    "clients": "Clients",
+    "letsTalk": "Let's talk"
+  },
+  "home": {
+    "title": "Welcome to Our Website",
+    "description": "We provide innovative solutions for your business needs."
+  },
+  "footer": {
+    "copyright": "© 2023 Meric International Co. All rights reserved.",
+    "privacyPolicy": "Privacy Policy"
+  }
+}
