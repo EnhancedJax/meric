@@ -1,5 +1,4 @@
-h1,
-h2 {
+h1 {
   font-family: "Syncopate", sans-serif;
 }
 
@@ -7,6 +6,8 @@ body {
   height: 100vh;
   display: flex;
   flex-direction: column;
+  background-color: rgb(var(--background));
+  color: rgb(var(--text));
 }
 
 footer {

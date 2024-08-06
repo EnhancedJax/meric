@@ -4,13 +4,16 @@ export default {
   theme: {
     extend: {
       colors: {
-        text: "var(--text)",
-        secondary: "var(--secondary)",
-        primary: "var(--primary)",
-        white: "var(--white)",
-        border: "var(--border)",
-        background: "var(--background)",
-        gray: "var(--gray)",
+        text: {
+          DEFAULT: "rgb(var(--text))",
+          5: "rgba(var(--text), 0.05)",
+        },
+        secondary: "rgb(var(--secondary))",
+        primary: "rgb(var(--primary))",
+        white: "rgb(var(--white))",
+        border: "rgb(var(--border))",
+        background: "rgb(var(--background))",
+        gray: "rgb(var(--gray))",
       },
     },
   },

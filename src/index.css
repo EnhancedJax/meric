@@ -12,21 +12,21 @@
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 
-  --text: #1b1e3d;
-  --secondary: #282b50;
-  --primary: #f7a245;
-  --white: #ffffff;
-  --border: #b6b6b6;
-  --background: #fafcfc;
-  --gray: #b3b3b3;
+  --text: 27, 30, 61;
+  --secondary: 40, 43, 80;
+  --primary: 247, 162, 69;
+  --white: 255, 255, 255;
+  --border: 182, 182, 182;
+  --background: 250, 252, 252;
+  --gray: 179, 179, 179;
 }
 
 :dark {
-  --text: #1b1e3d;
-  --secondary: #282b50;
-  --primary: #f7a245;
-  --white: #ffffff;
-  --border: #b6b6b6;
-  --background: #fafcfc;
-  --gray: #b3b3b3;
+  --text: 27, 30, 61;
+  --secondary: 40, 43, 80;
+  --primary: 247, 162, 69;
+  --white: 255, 255, 255;
+  --border: 182, 182, 182;
+  --background: 250, 252, 252;
+  --gray: 179, 179, 179;
 }
