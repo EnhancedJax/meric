@@ -10,6 +10,7 @@ export default {
         white: "var(--white)",
         border: "var(--border)",
         background: "var(--background)",
+        gray: "var(--gray)",
       },
     },
   },

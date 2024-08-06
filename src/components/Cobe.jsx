@@ -4,8 +4,8 @@ import { useEffect, useRef } from "react";
 import styled from "styled-components";
 
 const Container = styled.div`
-  width: 500px;
-  height: 500px;
+  width: 100%;
+  height: 100%;
   aspect-ratio: 1;
   margin: auto;
   position: relative;
@@ -58,10 +58,14 @@ export function Cobe({ markers = [], focusIndex = null }) {
       dark: 1,
       diffuse: 3,
       markerColor: [1, 0, 0],
-      markers: markers.map(([lat, long]) => ({
-        location: [lat, long],
-        size: 0.1,
-      })),
+      markers: markers
+        .map(([lat, long]) => [
+          {
+            location: [lat, long],
+            size: 0.1,
+          },
+        ])
+        .flat(),
       mapSamples: 16000,
       mapBrightness: 1,
       baseColor: [1, 1, 1],

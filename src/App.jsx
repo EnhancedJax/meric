@@ -1,3 +1,4 @@
+import { ReactLenis } from "lenis/react";
 import { ThemeProvider } from "next-themes";
 import React from "react";
 import { I18nextProvider } from "react-i18next";
@@ -14,14 +15,17 @@ function App() {
     <I18nextProvider i18n={i18n}>
       <ThemeProvider>
         <Router>
-          <div className="flex flex-col min-h-screen bg-background text-text">
+          <ReactLenis
+            root
+            className="flex flex-col min-h-screen bg-background text-text"
+          >
             <Header />
             <Routes>
               <Route path="/" element={<HomePage />} />
               <Route path="/privacy-policy" element={<PrivacyPolicy />} />
             </Routes>
             <Footer />
-          </div>
+          </ReactLenis>
         </Router>
       </ThemeProvider>
     </I18nextProvider>

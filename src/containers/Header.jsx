@@ -21,8 +21,8 @@ export default function Header() {
 
   return (
     <header
-      className={`w-full bg-white py-6 px-24 h-[89px] ${
-        visible ? "fixed" : "hidden"
+      className={`w-full bg-white py-6 px-24 h-[89px] z-50 fixed transition-transform duration-300 ${
+        visible ? "translate-y-0" : "-translate-y-full"
       }`}
     >
       <nav className="relative flex items-center justify-between w-full mx-auto">
@@ -32,7 +32,7 @@ export default function Header() {
         >
           <img src="logo.png" alt="logo" className="h-10" />
         </a>
-        <ul className="flex items-center gap-5 text-sm">
+        <ul className="flex items-center gap-5 text-sm text-text">
           <a href="#">
             <li className="">{t("header.about")}</li>
           </a>
