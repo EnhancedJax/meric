@@ -2,42 +2,15 @@ import { motion, useScroll, useTransform } from "framer-motion";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useEffect, useRef } from "react";
+import { PRODUCT_IMAGES } from "../../../../constants";
+import { GradientBlob } from "./styles";
 
 gsap.registerPlugin(ScrollTrigger);
-
-const images = [
-  {
-    src: "https://placehold.co/400x100",
-    w: 400,
-    h: 100,
-    l: "25vw",
-    t: "15vh",
-    r: "auto",
-    parallax: 0,
-  },
-  {
-    src: "https://placehold.co/400x100",
-    w: 300,
-    h: 50,
-    l: "auto",
-    t: "25vh",
-    r: "20vw",
-    parallax: -150,
-  },
-  {
-    src: "https://placehold.co/400x100",
-    w: 500,
-    h: 150,
-    l: "50vw",
-    t: "35vh",
-    r: "auto",
-    parallax: 0,
-  },
-];
 
 export default function Section3() {
   const softSvgRef = useRef(null);
   const sectionRef = useRef(null);
+  const helloWorldRef = useRef(null);
   const { scrollYProgress } = useScroll({
     target: sectionRef,
     offset: ["start end", "end start"],
@@ -51,22 +24,30 @@ export default function Section3() {
         softSvgRef.current,
         { height: 0 },
         {
-          height: 100,
+          height: 200,
           scrollTrigger: {
             trigger: sectionRef.current,
-            start: "top bottom",
-            end: "top center",
+            start: "50 bottom",
+            end: "top top",
             scrub: true,
           },
         }
       );
+
+      ScrollTrigger.create({
+        trigger: sectionRef.current,
+        start: "top -50",
+        end: "bottom bottom",
+        pin: helloWorldRef.current,
+        pinSpacing: false,
+      });
     });
 
     return () => ctx.revert();
   }, []);
 
   return (
-    <section className="relative w-full h-[200vh]" ref={sectionRef}>
+    <section className="relative w-full h-[200vh] mt-[300px]" ref={sectionRef}>
       <div
         className="absolute top-0 w-full h-0 -translate-y-full text-primary"
         ref={softSvgRef}
@@ -81,9 +62,24 @@ export default function Section3() {
           <path d="M 0 100 V 90.4211 Q 50 -81.9985 100 90.4211 V 100 z" />
         </svg>
       </div>
-      <span className="absolute text-white">Hello world</span>
-      <div className="h-full bg-primary">
-        {images.map((image, index) => (
+      <div
+        ref={helloWorldRef}
+        className="absolute top-0 left-0 z-10 flex items-center justify-center w-full h-screen"
+      >
+        <motion.div
+          className="relative w-[500px]"
+          style={{ y: parallax(-100) }}
+        >
+          <GradientBlob />
+          <h2 className="mb-6 text-5xl font-bold">
+            Just choose us. Any shoe you want. Large shoes or whatever
+          </h2>
+          <p>All ages and genders ⋅ Fashion / Sports / Leisure</p>
+        </motion.div>
+      </div>
+      <div className="flex flex-col items-center h-full bg-primary">
+        <div className="h-px" />
+        {PRODUCT_IMAGES.map((image, index) => (
           <motion.img
             key={`Section3-image-${index}`}
             src={image.src}

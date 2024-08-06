@@ -7,8 +7,46 @@
     "letsTalk": "Let's talk"
   },
   "home": {
-    "title": "Welcome to Our Website",
-    "description": "We provide innovative solutions for your business needs."
+    "section1": {
+      "trustedBy": "Trusted by",
+      "h1": "About Us",
+      "p": "We are a footwear design and sourcing agency that has been established for 24+ years.",
+      "p2": "Over the years, our agency has worked on hundred of projects and had become a trusted ally of numerous B2B clients.",
+      "satisfiedClients": "Satisfied Clients",
+      "yearsOfExperience": "Years of Experience",
+      "partners": "Partners"
+    },
+    "section2": {
+      "h1": "Our Services",
+      "p": "We offer a one-stop experience to produce a wide-range of footwear exceptionally",
+      "s1": "Design & Development",
+      "s1title": "TBC",
+      "s1p": "TBC",
+      "s2": "Sourcing & Production",
+      "s2title": "TBC",
+      "s2p": "TBC",
+      "s3": "Quality Assessments",
+      "s3title": "TBC",
+      "s3p": "TBC"
+    },
+    "section3": {
+      "h1": "Our Products",
+      "title": "TBC, Just choose us. Any shoe you want. Large shoes or whatever.",
+      "p": "All ages and genders ⋅ Fashion / Sports / Leisure"
+    },
+    "contact": {
+      "h1": "Let's work together",
+      "p": "Tell us some information and we'll get back to you soon!",
+      "contactUs": "Contact Us",
+      "contactUsP": "Call us Mon-Fri from 8am to 5pm, or shoot us an email!",
+      "clientsOperatingIn": "Clients operating in",
+      "asia": "Asia",
+      "europe": "Europe",
+      "ownerFounder": "Main Owner & Founder",
+      "ceoPartner": "CEO & Partner",
+      "visitUs": "Visit Us",
+      "visitUsP": "Our showrooms and offices spread across the globe"
+    }
   },
   "footer": {
     "copyright": "© 2023 Meric International Co. All rights reserved.",

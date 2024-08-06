@@ -46,6 +46,100 @@ export const CONTACTS = [
   },
 ];
 
+export const SERVICES_IMAGES = [
+  [
+    "https://placehold.co/100x100",
+    "https://placehold.co/100x100",
+    "https://placehold.co/100x100",
+    "https://placehold.co/100x100",
+    "https://placehold.co/100x100",
+  ],
+  [
+    "https://placehold.co/100x100",
+    "https://placehold.co/100x100",
+    "https://placehold.co/100x100",
+    "https://placehold.co/100x100",
+    "https://placehold.co/100x100",
+  ],
+  [
+    "https://placehold.co/100x100",
+    "https://placehold.co/100x100",
+    "https://placehold.co/100x100",
+    "https://placehold.co/100x100",
+    "https://placehold.co/100x100",
+  ],
+];
+
 export const SMOOTHSCROLL_OPTIONS = {
   smooth: true,
 };
+
+export const PRODUCT_IMAGES = [
+  {
+    src: "https://placehold.co/400x100",
+    w: 400,
+    h: 100,
+    l: "-25vw",
+    t: "15vh",
+    parallax: 0,
+  },
+  {
+    src: "https://placehold.co/400x100",
+    w: 300,
+    h: 50,
+    l: "50vw",
+    t: "25vh",
+    parallax: -150,
+  },
+  {
+    src: "https://placehold.co/400x100",
+    w: 500,
+    h: 150,
+    l: "-60vw",
+    t: "10vh",
+    r: "auto",
+    parallax: -400,
+  },
+  {
+    src: "https://placehold.co/400x100",
+    w: 300,
+    h: 100,
+    l: "40vw",
+    t: "10vh",
+    r: "auto",
+    parallax: 0,
+  },
+  {
+    src: "https://placehold.co/400x100",
+    w: 500,
+    h: 150,
+    l: "-30vw",
+    t: "10vh",
+    r: "auto",
+    parallax: -60,
+  },
+  {
+    src: "https://placehold.co/400x100",
+    w: 400,
+    h: 100,
+    l: "50vw",
+    t: "25vh",
+    parallax: -1000,
+  },
+  {
+    src: "https://placehold.co/400x100",
+    w: 400,
+    h: 100,
+    l: "50vw",
+    t: "0vh",
+    parallax: -50,
+  },
+  {
+    src: "https://placehold.co/400x400",
+    w: 400,
+    h: 400,
+    l: "-55vw",
+    t: "-20vh",
+    parallax: -50,
+  },
+];

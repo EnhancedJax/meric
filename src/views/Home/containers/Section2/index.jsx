@@ -2,6 +2,8 @@ import { motion } from "framer-motion";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/all";
 import { useEffect, useRef, useState } from "react";
+import H1 from "../../../../components/H1";
+import { SERVICES_IMAGES } from "../../../../constants";
 gsap.registerPlugin(ScrollTrigger);
 
 export default function Section2() {
@@ -53,45 +55,11 @@ export default function Section2() {
     return () => ctx.revert();
   }, []);
 
-  const contentData = [
-    {
-      title: "title1",
-      text: 'We specialize in design and development, and with our skilled team of international designers, we are working with all genders - Men"s, Women"s and Kid"s footwear. We make all samples in our own sample rooms - displayed at our showrooms in Jinjiang and Dongguan.',
-      images: [
-        "https://placehold.co/100x100",
-        "https://placehold.co/100x100",
-        "https://placehold.co/100x100",
-        "https://placehold.co/100x100",
-        "https://placehold.co/100x100",
-      ],
-    },
-    {
-      title: "title2",
-      text: 'We specialize in design and development, and with our skilled team of international designers, we are working with all genders - Men"s, Women"s and Kid"s footwear. We make all samples in our own sample rooms - displayed at our showrooms in Jinjiang and Dongguan.',
-      images: [
-        "https://placehold.co/100x100",
-        "https://placehold.co/100x100",
-        "https://placehold.co/100x100",
-        "https://placehold.co/100x100",
-        "https://placehold.co/100x100",
-      ],
-    },
-    {
-      title: "title3",
-      text: 'We specialize in design and development, and with our skilled team of international designers, we are working with all genders - Men"s, Women"s and Kid"s footwear. We make all samples in our own sample rooms - displayed at our showrooms in Jinjiang and Dongguan.',
-      images: [
-        "https://placehold.co/100x100",
-        "https://placehold.co/100x100",
-        "https://placehold.co/100x100",
-        "https://placehold.co/100x100",
-        "https://placehold.co/100x100",
-      ],
-    },
-  ];
-
   return (
     <section className="bg-white text-text">
-      Hello world
+      <div className="py-12">
+        <H1>Our Services</H1>
+      </div>
       <section
         ref={sectionRef}
         className="relative w-full h-screen py-4 overflow-hidden"
@@ -105,13 +73,13 @@ export default function Section2() {
             className="absolute bottom-0 left-0 h-full origin-bottom-left -z-10"
           />
           <div className="w-full h-full">
-            {contentData.map((item, index) => (
+            {SERVICES_IMAGES.map((item, index) => (
               <motion.div
                 key={index}
                 className="absolute flex items-center justify-center w-full h-full gap-6"
               >
                 <div className="flex flex-col justify-center w-1/4 gap-12 h-1/2">
-                  {item.images.slice(0, 3).map((image, indexx) => (
+                  {item.slice(0, 3).map((image, indexx) => (
                     <motion.img
                       key={`Section2-${index}-image-${indexx}`}
                       src={image}
@@ -126,7 +94,7 @@ export default function Section2() {
                   ))}
                 </div>
                 <div className="flex flex-col justify-center w-1/4 gap-12 h-1/2">
-                  {item.images.slice(3).map((image, indexx) => (
+                  {item.slice(3).map((image, indexx) => (
                     <motion.img
                       key={`Section2-${index}-image-${indexx + 3}`}
                       src={image}
@@ -179,7 +147,7 @@ export default function Section2() {
         </div>
 
         <div ref={contentRef} className="relative pt-4 left-[572px] w-2/5">
-          <p className="absolute top-0 text-4xl ">
+          <p className="absolute top-0 text-5xl ">
             We offer a one-stop experience to produce a wide-range of footwear
             exceptionally
           </p>
@@ -190,22 +158,22 @@ export default function Section2() {
               }px - 32px)`,
             }}
           />
-          {contentData.map(({ title, text }, index) => (
+          {[0, 1, 2].map((i, index) => (
             <div
-              key={title}
+              key={i}
               ref={
-                index === 0
-                  ? content1Ref
-                  : index === 1
-                  ? content2Ref
-                  : content3Ref
+                i === 0 ? content1Ref : index === 1 ? content2Ref : content3Ref
               }
-              className={`text-text ${
-                index !== contentData.length - 1 ? "mb-[300px]" : ""
-              } w-full`}
+              className={`text-text ${index !== 2 ? "mb-[300px]" : ""} w-full`}
             >
-              <h2 className="text-4xl font-bold">{title}</h2>
-              <p className="">{text}</p>
+              <h2 className="text-4xl font-bold">title or outcome</h2>
+              <p className="">
+                We specialize in design and development, and with our skilled
+                team of international designers, we are working with all genders
+                - Men's, Women's and Kid's footwear. We make all samples in our
+                own sample rooms - displayed at our showrooms in Jinjiang and
+                Dongguan.
+              </p>
             </div>
           ))}
           <div

@@ -7,6 +7,7 @@ export default {
         text: {
           DEFAULT: "rgb(var(--text))",
           5: "rgba(var(--text), 0.05)",
+          50: "rgba(var(--text), 0.5)",
         },
         secondary: "rgb(var(--secondary))",
         primary: "rgb(var(--primary))",

@@ -6,7 +6,7 @@ body {
   height: 100vh;
   display: flex;
   flex-direction: column;
-  background-color: rgb(var(--background));
+  background-color: #fff;
   color: rgb(var(--text));
 }
 
