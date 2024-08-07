@@ -2,11 +2,13 @@
   "header": {
     "about": "About",
     "services": "Services",
-    "production": "Production",
-    "clients": "Clients",
+    "products": "Products",
     "letsTalk": "Let's talk"
   },
   "home": {
+    "hero": {
+      "p": "We are professionals specializing in footwear design and sourcing."
+    },
     "section1": {
       "trustedBy": "Trusted by",
       "h1": "About Us",
@@ -41,7 +43,7 @@
       "contactUsP": "Call us Mon-Fri from 8am to 5pm, or shoot us an email!",
       "clientsOperatingIn": "Clients operating in",
       "asia": "Asia",
-      "europe": "Europe",
+      "eu": "Europe",
       "ownerFounder": "Main Owner & Founder",
       "ceoPartner": "CEO & Partner",
       "visitUs": "Visit Us",
@@ -49,7 +51,6 @@
     }
   },
   "footer": {
-    "copyright": "© 2023 Meric International Co. All rights reserved.",
-    "privacyPolicy": "Privacy Policy"
+    "copyright": "© 2023 Meric International Co. All rights reserved."
   }
 }

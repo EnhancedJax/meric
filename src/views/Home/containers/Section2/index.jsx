@@ -2,6 +2,7 @@ import { motion } from "framer-motion";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/all";
 import { useEffect, useRef, useState } from "react";
+import { useTranslation } from "react-i18next";
 import H1 from "../../../../components/H1";
 import { SERVICES_IMAGES } from "../../../../constants";
 gsap.registerPlugin(ScrollTrigger);
@@ -15,6 +16,7 @@ export default function Section2() {
   const content2Ref = useRef(null);
   const content3Ref = useRef(null);
   const [activePart, setActivePart] = useState(0);
+  const { t } = useTranslation();
 
   useEffect(() => {
     const section = sectionRef.current;
@@ -56,9 +58,9 @@ export default function Section2() {
   }, []);
 
   return (
-    <section className="bg-white text-text">
+    <section id="section-services" className="bg-white text-text">
       <div className="py-12">
-        <H1>Our Services</H1>
+        <H1>{t("home.section2.h1")}</H1>
       </div>
       <section
         ref={sectionRef}
@@ -118,9 +120,9 @@ export default function Section2() {
           className="absolute z-10 w-[130px] h-full top-0 right-8 flex flex-col justify-center items-center space-y-4"
         >
           {[
-            "Design and development",
-            "Sourcing and production",
-            "Quality assessment",
+            t("home.section2.s1"),
+            t("home.section2.s2"),
+            t("home.section2.s3"),
           ].map((title, index) => (
             <div
               key={`Indicator-${index}`}
@@ -147,10 +149,7 @@ export default function Section2() {
         </div>
 
         <div ref={contentRef} className="relative pt-4 left-[572px] w-2/5">
-          <p className="absolute top-0 text-5xl ">
-            We offer a one-stop experience to produce a wide-range of footwear
-            exceptionally
-          </p>
+          <p className="absolute top-0 text-5xl ">{t("home.section2.p")}</p>
           <div
             style={{
               height: `calc(50vh - ${
@@ -166,14 +165,10 @@ export default function Section2() {
               }
               className={`text-text ${index !== 2 ? "mb-[300px]" : ""} w-full`}
             >
-              <h2 className="text-4xl font-bold">title or outcome</h2>
-              <p className="">
-                We specialize in design and development, and with our skilled
-                team of international designers, we are working with all genders
-                - Men's, Women's and Kid's footwear. We make all samples in our
-                own sample rooms - displayed at our showrooms in Jinjiang and
-                Dongguan.
-              </p>
+              <h2 className="text-4xl font-bold">
+                {t(`home.section2.s${i + 1}title`)}
+              </h2>
+              <p className="">{t(`home.section2.s${i + 1}p`)}</p>
             </div>
           ))}
           <div

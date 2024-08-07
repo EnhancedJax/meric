@@ -2,15 +2,18 @@ import { motion, useScroll, useTransform } from "framer-motion";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useEffect, useRef } from "react";
+import { useTranslation } from "react-i18next";
+import H1 from "../../../../components/H1";
 import { PRODUCT_IMAGES } from "../../../../constants";
 import { GradientBlob } from "./styles";
 
 gsap.registerPlugin(ScrollTrigger);
 
 export default function Section3() {
+  const { t } = useTranslation();
   const softSvgRef = useRef(null);
   const sectionRef = useRef(null);
-  const helloWorldRef = useRef(null);
+  const centerRef = useRef(null);
   const { scrollYProgress } = useScroll({
     target: sectionRef,
     offset: ["start end", "end start"],
@@ -22,9 +25,9 @@ export default function Section3() {
     let ctx = gsap.context(() => {
       gsap.fromTo(
         softSvgRef.current,
-        { height: 0 },
+        { height: "0vw" },
         {
-          height: 200,
+          height: "15vw",
           scrollTrigger: {
             trigger: sectionRef.current,
             start: "50 bottom",
@@ -38,7 +41,7 @@ export default function Section3() {
         trigger: sectionRef.current,
         start: "top -50",
         end: "bottom bottom",
-        pin: helloWorldRef.current,
+        pin: centerRef.current,
         pinSpacing: false,
       });
     });
@@ -47,7 +50,11 @@ export default function Section3() {
   }, []);
 
   return (
-    <section className="relative w-full h-[200vh] mt-[300px]" ref={sectionRef}>
+    <section
+      id="section-products"
+      className="relative w-full h-[200vh] mt-[300px]"
+      ref={sectionRef}
+    >
       <div
         className="absolute top-0 w-full h-0 -translate-y-full text-primary"
         ref={softSvgRef}
@@ -63,18 +70,21 @@ export default function Section3() {
         </svg>
       </div>
       <div
-        ref={helloWorldRef}
+        ref={centerRef}
         className="absolute top-0 left-0 z-10 flex items-center justify-center w-full h-screen"
       >
         <motion.div
-          className="relative w-[500px]"
+          className="relative w-[500px] md:p-0 p-6"
           style={{ y: parallax(-100) }}
         >
           <GradientBlob />
+          <div className="mb-3 w-fit">
+            <H1>{t("home.section3.h1")}</H1>
+          </div>
           <h2 className="mb-6 text-5xl font-bold">
-            Just choose us. Any shoe you want. Large shoes or whatever
+            {t("home.section3.title")}
           </h2>
-          <p>All ages and genders ⋅ Fashion / Sports / Leisure</p>
+          <p>{t("home.section3.p")}</p>
         </motion.div>
       </div>
       <div className="flex flex-col items-center h-full bg-primary">

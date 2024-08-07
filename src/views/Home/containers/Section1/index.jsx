@@ -1,50 +1,58 @@
 import Marquee from "react-fast-marquee";
+import { useTranslation } from "react-i18next";
 import H1 from "../../../../components/H1";
 
 export default function Section1() {
+  const { t } = useTranslation();
+
   return (
-    <section className="w-full pb-24">
-      <section className="container py-12 opacity-40">
-        <p className="w-full mb-3 text-sm text-center">Trusted by</p>
+    <section id="section-about" className="w-full pb-24 ">
+      <section className="py-12 clampcontainer opacity-40">
+        <p className="w-full mb-3 text-sm text-center">
+          {t("home.section1.trustedBy")}
+        </p>
         <Marquee autoFill gradient className="h-12">
-          <img src="brands/disney.png" className="h-12 mr-12" />
+          <img src="brands/disney.png" className="h-12 mr-6 md:mr-12 " />
         </Marquee>
       </section>
-      <section className="w-full py-24">
-        <div className="container flex gap-16">
-          <div className="flex-none">
-            <H1>About Us</H1>
+      <section className="w-full px-6 py-24 md:px-0">
+        <div className="flex flex-col gap-8 md:gap-16 md:flex-row clampcontainer">
+          <div className="flex-none w-fit md:w-auto">
+            <H1>{t("home.section1.h1")}</H1>
           </div>
-          <p className="text-5xl">
-            <span>
-              We are a footwear design and sourcing agency that has been
-              established for 24+ years.
-            </span>
+          <p className="text-4xl md:text-5xl">
+            <span>{t("home.section1.p")}</span>
             <br />
             <br />
-            <span className="opacity-50">
-              Over the years, our agency has worked on hundred of projects and
-              had become a trusted ally of numerous B2B clients.
-            </span>
+            <span className="opacity-50">{t("home.section1.p2")}</span>
           </p>
         </div>
       </section>
       <section
-        className="w-full py-16 text-white"
-        style={{ backgroundImage: "url(section1_bg.jpg)" }}
+        className="w-full py-12 text-white md:py-8"
+        style={{
+          backgroundImage: "url(section1_bg.jpg)",
+          backgroundPosition: "bottom right",
+        }}
       >
-        <div className="container flex justify-center gap-20">
-          <div className="flex flex-col gap-5">
-            <span className="font-bold text-8xl">200+</span>
-            <span className="text-lg font-light">Satisfied Clients</span>
+        <div className="flex justify-between px-6 md:justify-center md:gap-20 clampcontainer md:px-0">
+          <div className="flex flex-col gap-2.5 md:gap-5">
+            <span className="text-5xl font-bold md:text-7xl">200+</span>
+            <span className="text-sm font-light md:text-lg">
+              {t("home.section1.satisfiedClients")}
+            </span>
           </div>
-          <div className="flex flex-col gap-5">
-            <span className="font-bold text-8xl">30+</span>
-            <span className="text-lg font-light">Partners</span>
+          <div className="flex flex-col gap-2.5 md:gap-5">
+            <span className="text-5xl font-bold md:text-7xl">30+</span>
+            <span className="text-sm font-light md:text-lg">
+              {t("home.section1.partners")}
+            </span>
           </div>
-          <div className="flex flex-col gap-5">
-            <span className="font-bold text-8xl">{">"}24</span>
-            <span className="text-lg font-light">Years of Experience</span>
+          <div className="flex flex-col gap-2.5 md:gap-5">
+            <span className="text-5xl font-bold md:text-7xl">{"> "}24</span>
+            <span className="text-sm font-light md:text-lg">
+              {t("home.section1.yearsOfExperience")}
+            </span>
           </div>
         </div>
       </section>

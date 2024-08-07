@@ -31,14 +31,14 @@ export const OFFICES = [
 
 export const CONTACTS = [
   {
-    area: "Asia",
+    area: "asia",
     role: "ownerFounder",
     person: "Eric Ng",
     phone: "+852 9199 9155",
     email: "eric@mericintlhk.com",
   },
   {
-    area: "Europe",
+    area: "eu",
     role: "ceoPartner",
     person: "Johnny Kier Droob",
     phone: "+45 5339 2775",

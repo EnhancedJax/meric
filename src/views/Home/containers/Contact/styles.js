@@ -5,12 +5,8 @@ export const CobeContainer = styled.div`
   height: 500px;
   position: relative;
   top: 230px;
-  mask-image: linear-gradient(180deg, #fff 50%, rgba(255, 255, 255, 0) 80%);
-  -webkit-mask-image: linear-gradient(
-    180deg,
-    #fff 50%,
-    rgba(255, 255, 255, 0) 80%
-  );
+  mask-image: linear-gradient(180deg, white 50%, transparent 80%);
+  -webkit-mask-image: linear-gradient(180deg, white 50%, transparent 80%);
 `;
 
 export const MobileCobeContainer = styled.div`

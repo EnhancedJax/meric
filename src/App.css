@@ -14,11 +14,7 @@ footer {
   margin-top: auto;
 }
 
-.container {
+.clampcontainer {
   max-width: 1024px;
   margin: 0 auto;
-}
-
-.section {
-  @apply w-full px-6 md:px-12;
 }

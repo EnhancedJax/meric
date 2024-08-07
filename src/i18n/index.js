@@ -9,14 +9,11 @@ i18n
   .use(initReactI18next)
   .init({
     resources: {
-      en: {
+      "en-US": {
         translation: enTranslations,
       },
-      //   fr: {
-      //     translation: frTranslations,
-      //   },
     },
-    fallbackLng: "en",
+    fallbackLng: "en-US",
     interpolation: {
       escapeValue: false,
     },

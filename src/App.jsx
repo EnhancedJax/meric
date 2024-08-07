@@ -5,7 +5,7 @@ import { I18nextProvider } from "react-i18next";
 import { Route, BrowserRouter as Router, Routes } from "react-router-dom";
 import "./App.css";
 import Footer from "./containers/Footer";
-// import Header from "./containers/Header";
+import Header from "./containers/Header";
 import i18n from "./i18n";
 import HomePage from "./views/Home";
 import PrivacyPolicy from "./views/PrivacyPolicy";
@@ -16,7 +16,7 @@ function App() {
       <ThemeProvider>
         <Router>
           <ReactLenis root>
-            {/* <Header /> */}
+            <Header />
             <Routes>
               <Route path="/" element={<HomePage />} />
               <Route path="/privacy-policy" element={<PrivacyPolicy />} />
