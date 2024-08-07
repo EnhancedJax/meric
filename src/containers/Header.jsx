@@ -41,24 +41,33 @@ export default function Header() {
             onClick={() => {
               lenis.scrollTo("#section-about");
             }}
+            data-cursor-icon="ArrowUpRight"
+            data-cursor-icon-color="text"
+            className="cursor-none"
           >
-            <li className="">{t("header.about")}</li>
+            <li>{t("header.about")}</li>
           </a>
           <a
             href="#section-services"
             onClick={() => {
               lenis.scrollTo("#section-services");
             }}
+            data-cursor-icon="ArrowUpRight"
+            data-cursor-icon-color="text"
+            className="cursor-none"
           >
-            <li className="">{t("header.services")}</li>
+            <li>{t("header.services")}</li>
           </a>
           <a
             href="#section-products"
             onClick={() => {
               lenis.scrollTo("#section-products");
             }}
+            data-cursor-icon="ArrowUpRight"
+            data-cursor-icon-color="text"
+            className="cursor-none"
           >
-            <li className="">{t("header.products")}</li>
+            <li>{t("header.products")}</li>
           </a>
         </ul>
         <div className="flex gap-5">
@@ -67,12 +76,10 @@ export default function Header() {
             onClick={() => {
               lenis.scrollTo("#section-contact");
             }}
-            className="px-10 bg-secondary rounded-tl-[35px] rounded-br-[35px] flex items-center"
+            data-cursor-icon="ArrowUpRight"
+            className="px-10 bg-secondary rounded-tl-[35px] rounded-br-[35px] flex items-center cursor-none"
           >
-            <span className="font-bold text-white">
-              {" "}
-              {t("header.letsTalk")}
-            </span>
+            <span className="font-bold text-white">{t("header.letsTalk")}</span>
           </a>
           <LangButton />
         </div>

@@ -107,15 +107,15 @@ export function Cobe({ markers = [], focusIndex = null }) {
         onPointerDown={(e) => {
           pointerInteracting.current =
             e.clientX - pointerInteractionMovement.current;
-          canvasRef.current.style.cursor = "grabbing";
+          // canvasRef.current.style.cursor = "grabbing";
         }}
         onPointerUp={() => {
           pointerInteracting.current = null;
-          canvasRef.current.style.cursor = "grab";
+          // canvasRef.current.style.cursor = "grab";
         }}
         onPointerOut={() => {
           pointerInteracting.current = null;
-          canvasRef.current.style.cursor = "grab";
+          // canvasRef.current.style.cursor = "grab";
         }}
         onMouseMove={(e) => {
           if (pointerInteracting.current !== null) {
@@ -138,7 +138,6 @@ export function Cobe({ markers = [], focusIndex = null }) {
         style={{
           width: "100%",
           height: "100%",
-          cursor: "grab",
           contain: "layout paint size",
           opacity: 0,
           transition: "opacity 1s ease",

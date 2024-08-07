@@ -54,6 +54,7 @@ export default function Section3() {
       id="section-products"
       className="relative w-full h-[200vh] mt-[300px]"
       ref={sectionRef}
+      data-cursor-color="text"
     >
       <div
         className="absolute top-0 w-full h-0 -translate-y-full text-primary"

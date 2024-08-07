@@ -1,9 +1,15 @@
+import { motion, useInView } from "framer-motion";
+import { useRef } from "react";
 import Marquee from "react-fast-marquee";
 import { useTranslation } from "react-i18next";
 import H1 from "../../../../components/H1";
 
 export default function Section1() {
   const { t } = useTranslation();
+  const paragraphRef = useRef(null);
+  const metricsRef = useRef(null);
+  const paragraphInView = useInView(paragraphRef, {});
+  const metricsInView = useInView(metricsRef, {});
 
   return (
     <section id="section-about" className="w-full pb-24 ">
@@ -20,20 +26,30 @@ export default function Section1() {
           <div className="flex-none w-fit md:w-auto">
             <H1>{t("home.section1.h1")}</H1>
           </div>
-          <p className="text-4xl md:text-5xl">
+          <motion.p
+            ref={paragraphRef}
+            className="text-4xl md:text-5xl"
+            initial={{ opacity: 0, y: 50 }}
+            animate={paragraphInView ? { opacity: 1, y: 0 } : {}}
+            transition={{ duration: 0.5 }}
+          >
             <span>{t("home.section1.p")}</span>
             <br />
             <br />
             <span className="opacity-50">{t("home.section1.p2")}</span>
-          </p>
+          </motion.p>
         </div>
       </section>
-      <section
+      <motion.section
+        ref={metricsRef}
         className="w-full py-12 text-white md:py-8"
         style={{
           backgroundImage: "url(section1_bg.jpg)",
           backgroundPosition: "bottom right",
         }}
+        initial={{ x: "-100%" }}
+        animate={metricsInView ? { x: 0 } : {}}
+        transition={{ duration: 0.4, ease: "circOut" }}
       >
         <div className="flex justify-between px-6 md:justify-center md:gap-20 clampcontainer md:px-0">
           <div className="flex flex-col gap-2.5 md:gap-5">
@@ -55,7 +71,7 @@ export default function Section1() {
             </span>
           </div>
         </div>
-      </section>
+      </motion.section>
     </section>
   );
 }

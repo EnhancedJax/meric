@@ -2,6 +2,9 @@ import { ChevronDown } from "lucide-react";
 import React, { useState } from "react";
 
 const AccordionItem = ({ title, content, isActive, onClick }) => {
+  const handleClick = () => {
+    navigator.clipboard.writeText(content);
+  };
   return (
     <div className={`border-b border-gray ${isActive ? "border-primary" : ""}`}>
       <button
@@ -16,9 +19,12 @@ const AccordionItem = ({ title, content, isActive, onClick }) => {
         />
       </button>
       <div
-        className={`overflow-hidden  -mt-3 transition-all duration-300 ${
+        className={`overflow-hidden  -mt-3 transition-all duration-300 cursor-none ${
           isActive ? "max-h-96" : "max-h-0"
         }`}
+        data-cursor-icon="Copy"
+        data-cursor-icon-color="white"
+        onClick={handleClick}
       >
         <div className="pb-6 text-sm text-gray">{content}</div>
       </div>

@@ -4,6 +4,7 @@ import React from "react";
 import { I18nextProvider } from "react-i18next";
 import { Route, BrowserRouter as Router, Routes } from "react-router-dom";
 import "./App.css";
+import Cursor from "./components/Cursor";
 import Footer from "./containers/Footer";
 import Header from "./containers/Header";
 import i18n from "./i18n";
@@ -22,6 +23,7 @@ function App() {
               <Route path="/privacy-policy" element={<PrivacyPolicy />} />
             </Routes>
             <Footer />
+            <Cursor />
           </ReactLenis>
         </Router>
       </ThemeProvider>

@@ -12,8 +12,9 @@ import { CobeContainer, MobileCobeContainer } from "./styles";
 export default function Contact() {
   const { t } = useTranslation();
   const [focusIndex, setFocusIndex] = useState(null);
-  const [ref, inView] = useInView({ threshold: 0.5 });
+  const [ref, inView] = useInView({ threshold: 0.1 });
   const [isMd, setIsMd] = useState(false);
+  const [copied, setCopied] = useState(false);
 
   useEffect(() => {
     const checkScreenSize = () => {
@@ -29,6 +30,12 @@ export default function Contact() {
     return () => window.removeEventListener("resize", checkScreenSize);
   }, []);
 
+  const handleCopy = (text) => {
+    navigator.clipboard.writeText(text);
+    setCopied(true);
+    setTimeout(() => setCopied(false), 1000);
+  };
+
   return (
     <section
       id="section-contact"
@@ -41,7 +48,7 @@ export default function Contact() {
     >
       <div className="relative flex flex-col items-center justify-end gap-20 text-white clampcontainer">
         {isMd && (
-          <CobeContainer>
+          <CobeContainer data-cursor-icon="Grab">
             {inView && (
               <Cobe
                 markers={OFFICES.map((office) => office.coordinates)}
@@ -74,17 +81,33 @@ export default function Contact() {
                 </p>
                 <div className="flex gap-2.5">
                   <UserRound />
-                  <p>
+                  <p
+                    data-cursor-icon="Copy"
+                    className="cursor-none"
+                    onClick={() => handleCopy(contact.person)}
+                  >
                     {contact.person} - {t(`home.contact.${contact.role}`)}
                   </p>
                 </div>
                 <div className="flex gap-2.5">
                   <Phone />
-                  <p>{contact.phone}</p>
+                  <p
+                    data-cursor-icon="Copy"
+                    className="cursor-none"
+                    onClick={() => handleCopy(contact.phone)}
+                  >
+                    {contact.phone}
+                  </p>
                 </div>
                 <div className="flex gap-2.5">
                   <Inbox />
-                  <p>{contact.email}</p>
+                  <p
+                    data-cursor-icon="Copy"
+                    className="cursor-none"
+                    onClick={() => handleCopy(contact.email)}
+                  >
+                    {contact.email}
+                  </p>
                 </div>
               </div>
             ))}

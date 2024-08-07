@@ -8,10 +8,11 @@ export default function LangButton() {
 
   return (
     <motion.button
-      className="p-2 rounded-tl-[35px] rounded-tr-[35px] rounded-br-[35px] border-2 border-text text-text flex items-center overflow-hidden"
+      className="p-2 rounded-tl-[35px] rounded-tr-[35px] rounded-br-[35px] border-2 border-text text-text flex items-center overflow-hidden cursor-none"
       onClick={() => setExpanded(!expanded)}
       variants={container}
       initial="initial"
+      data-cursor-icon={expanded ? "Minimize" : "Maximize"}
       animate={expanded ? "expanded" : "initial"}
     >
       <AnimatePresence mode="popLayout">
@@ -53,6 +54,7 @@ function LangSelector({ lang, text }) {
       className={`flex items-center justify-center w-8 h-8 text-sm rounded-full ${
         i18n.language === lang ? "bg-text text-white" : "bg-white text-text"
       }`}
+      data-cursor-icon="Check"
     >
       {text}
     </motion.button>
