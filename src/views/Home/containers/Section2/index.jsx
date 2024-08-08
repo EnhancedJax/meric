@@ -77,39 +77,17 @@ export default function Section2() {
           <div className="w-full h-full">
             {SERVICES_IMAGES.map((item, index) => (
               <motion.div
+                className="absolute w-full h-full"
                 key={index}
-                className="absolute flex items-center justify-center w-full h-full gap-6"
+                animate={
+                  activePart === index
+                    ? { y: 0 }
+                    : { y: (activePart > index ? -1 : 1) * 100, opacity: 0 }
+                }
               >
-                <div className="flex flex-col justify-center w-1/4 gap-12 h-1/2">
-                  {item.slice(0, 3).map((image, indexx) => (
-                    <motion.img
-                      key={`Section2-${index}-image-${indexx}`}
-                      src={image}
-                      className="w-full aspect-square rounded-tl-3xl rounded-br-3xl"
-                      initial={{ y: "100%" }}
-                      animate={{ y: activePart === index ? 0 : "-100%" }}
-                      transition={{
-                        duration: 0.5,
-                        delay: [0, 0.3, 0.1][indexx],
-                      }}
-                    />
-                  ))}
-                </div>
-                <div className="flex flex-col justify-center w-1/4 gap-12 h-1/2">
-                  {item.slice(3).map((image, indexx) => (
-                    <motion.img
-                      key={`Section2-${index}-image-${indexx + 3}`}
-                      src={image}
-                      className="w-full aspect-square rounded-tl-3xl rounded-br-3xl"
-                      initial={{ y: "100%" }}
-                      animate={{ y: activePart === index ? 0 : "-100%" }}
-                      transition={{
-                        duration: 0.5,
-                        delay: [0.4, 0.2][indexx],
-                      }}
-                    />
-                  ))}
-                </div>
+                {item.map((image, index) => (
+                  <img src={image} alt="Section 1" />
+                ))}
               </motion.div>
             ))}
           </div>
@@ -182,4 +160,42 @@ export default function Section2() {
       </section>
     </section>
   );
+}
+
+{
+  /* <motion.div
+                key={index}
+                className="absolute flex items-center justify-center w-full h-full gap-6"
+              >
+                <div className="flex flex-col justify-center w-1/4 gap-12 h-1/2">
+                  {item.slice(0, 3).map((image, indexx) => (
+                    <motion.img
+                      key={`Section2-${index}-image-${indexx}`}
+                      src={image}
+                      className="w-full aspect-square rounded-tl-3xl rounded-br-3xl"
+                      initial={{ y: "100%" }}
+                      animate={{ y: activePart === index ? 0 : "-100%" }}
+                      transition={{
+                        duration: 0.5,
+                        delay: [0, 0.3, 0.1][indexx],
+                      }}
+                    />
+                  ))}
+                </div>
+                <div className="flex flex-col justify-center w-1/4 gap-12 h-1/2">
+                  {item.slice(3).map((image, indexx) => (
+                    <motion.img
+                      key={`Section2-${index}-image-${indexx + 3}`}
+                      src={image}
+                      className="w-full aspect-square rounded-tl-3xl rounded-br-3xl"
+                      initial={{ y: "100%" }}
+                      animate={{ y: activePart === index ? 0 : "-100%" }}
+                      transition={{
+                        duration: 0.5,
+                        delay: [0.4, 0.2][indexx],
+                      }}
+                    />
+                  ))}
+                </div>
+              </motion.div> */
 }
