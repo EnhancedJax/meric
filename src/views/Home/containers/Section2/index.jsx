@@ -5,7 +5,7 @@ import AnimatedImages from "./containers/AnimatedImages";
 import ContentArea from "./containers/ContentArea";
 import PartIndicator from "./containers/PartIndicator";
 import SectionHeader from "./containers/SectionHeader";
-import { setupScrollTrigger } from "./utils/ScrollTrigger";
+import { setupScrollTrigger } from "./utils/scrollTrigger";
 
 export default function Section2() {
   const sectionRef = useRef(null);
