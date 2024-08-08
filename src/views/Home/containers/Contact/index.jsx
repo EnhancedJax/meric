@@ -1,39 +1,21 @@
 import { Inbox, Phone, UserRound } from "lucide-react";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { useInView } from "react-hook-inview";
 import { useTranslation } from "react-i18next";
-import resolveConfig from "tailwindcss/resolveConfig";
-import tailwindConfig from "../../../../../tailwind.config";
 import Accordion from "../../../../components/Accordion";
 import { Cobe } from "../../../../components/Cobe";
 import { CONTACTS, OFFICES } from "../../../../constants";
+import { useTailwindBreakpoint } from "../../../../hooks/useTailwindBreakpoint";
 import { CobeContainer, MobileCobeContainer } from "./styles";
 
 export default function Contact() {
   const { t } = useTranslation();
   const [focusIndex, setFocusIndex] = useState(null);
   const [ref, inView] = useInView({ threshold: 0.1 });
-  const [isMd, setIsMd] = useState(false);
-  const [copied, setCopied] = useState(false);
-
-  useEffect(() => {
-    const checkScreenSize = () => {
-      const mdBreakpoint = parseInt(
-        resolveConfig(tailwindConfig).theme.screens.md
-      );
-      setIsMd(window.innerWidth >= mdBreakpoint);
-    };
-
-    checkScreenSize();
-    window.addEventListener("resize", checkScreenSize);
-
-    return () => window.removeEventListener("resize", checkScreenSize);
-  }, []);
+  const isMd = useTailwindBreakpoint("md");
 
   const handleCopy = (text) => {
     navigator.clipboard.writeText(text);
-    setCopied(true);
-    setTimeout(() => setCopied(false), 1000);
   };
 
   return (

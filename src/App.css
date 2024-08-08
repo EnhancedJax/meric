@@ -8,6 +8,8 @@ body {
   flex-direction: column;
   background-color: #fff;
   color: rgb(var(--text));
+  max-width: 100%;
+  overflow-x: hidden;
 }
 
 footer {

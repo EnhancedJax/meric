@@ -6,7 +6,7 @@ import { Route, BrowserRouter as Router, Routes } from "react-router-dom";
 import "./App.css";
 import Cursor from "./components/Cursor";
 import Footer from "./containers/Footer";
-import Header from "./containers/Header";
+// import Header from "./containers/Header";
 import i18n from "./i18n";
 import HomePage from "./views/Home";
 import PrivacyPolicy from "./views/PrivacyPolicy";
@@ -17,7 +17,7 @@ function App() {
       <ThemeProvider>
         <Router>
           <ReactLenis root>
-            <Header />
+            {/* <Header /> */}
             <Routes>
               <Route path="/" element={<HomePage />} />
               <Route path="/privacy-policy" element={<PrivacyPolicy />} />

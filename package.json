@@ -19,6 +19,7 @@
     "lucide-react": "^0.417.0",
     "next-themes": "^0.3.0",
     "react": "^18.3.1",
+    "react-countup": "^6.5.3",
     "react-dom": "^18.3.1",
     "react-fast-marquee": "^1.6.5",
     "react-hook-inview": "^4.5.1",

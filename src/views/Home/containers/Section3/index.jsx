@@ -5,6 +5,7 @@ import { useEffect, useRef } from "react";
 import { useTranslation } from "react-i18next";
 import H1 from "../../../../components/H1";
 import { PRODUCT_IMAGES } from "../../../../constants";
+import { useTailwindBreakpoint } from "../../../../hooks/useTailwindBreakpoint";
 import { GradientBlob } from "./styles";
 
 gsap.registerPlugin(ScrollTrigger);
@@ -14,6 +15,7 @@ export default function Section3() {
   const softSvgRef = useRef(null);
   const sectionRef = useRef(null);
   const centerRef = useRef(null);
+  const isMd = useTailwindBreakpoint("md");
   const { scrollYProgress } = useScroll({
     target: sectionRef,
     offset: ["start end", "end start"],
@@ -37,17 +39,19 @@ export default function Section3() {
         }
       );
 
-      ScrollTrigger.create({
+      const st = ScrollTrigger.create({
         trigger: sectionRef.current,
         start: "top -50",
         end: "bottom bottom",
         pin: centerRef.current,
         pinSpacing: false,
       });
+
+      return st;
     });
 
     return () => ctx.revert();
-  }, []);
+  }, [isMd]); // to fix section2 hooks out of sync, needed up to update this as well
 
   return (
     <section
@@ -75,7 +79,7 @@ export default function Section3() {
         className="absolute top-0 left-0 z-10 flex items-center justify-center w-full h-screen"
       >
         <motion.div
-          className="relative w-[500px] md:p-0 p-6"
+          className="relative w-full md:w-[500px] md:p-0 p-6"
           style={{ y: parallax(-100) }}
         >
           <GradientBlob />
@@ -91,19 +95,29 @@ export default function Section3() {
       <div className="flex flex-col items-center h-full bg-primary">
         <div className="h-px" />
         {PRODUCT_IMAGES.map((image, index) => (
-          <motion.img
+          <div
             key={`Section3-image-${index}`}
-            src={image.src}
-            alt={`Image ${index}`}
-            className="object-cover "
-            style={{
-              width: image.w,
-              height: image.h,
-              marginLeft: image.l,
-              marginTop: image.t,
-              y: parallax(image.parallax),
-            }}
-          />
+            className="relative flex-grow w-full"
+          >
+            <motion.div
+              className="absolute overflow-visible"
+              style={{
+                width: isMd ? image.w : image.w * 0.5,
+                height: isMd ? image.h : image.h * 0.5,
+                left: image.l,
+                right: image.r,
+                top: image.t,
+                y: parallax(image.parallax),
+              }}
+            >
+              <img
+                className="object-cover w-full h-full"
+                src={image.src}
+                alt={`${image.name}-${index}`}
+              />
+              <p>{image.name}</p>
+            </motion.div>
+          </div>
         ))}
       </div>
     </section>

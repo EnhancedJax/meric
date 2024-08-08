@@ -6,8 +6,7 @@ export const GradientBlob = styled.div`
     rgba(255, 204, 149, 0.8) 23%,
     rgba(255, 204, 149, 0) 100%
   );
-  /* filter: blur(100px); */
-  width: 800px;
+  width: min(800px, 100vw + 50%); // prevent horizontal scroll
   height: 600px;
   position: absolute;
   left: 20%;
