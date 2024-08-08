@@ -18,12 +18,12 @@ export const OFFICES = [
     coordinates: [23.0920249, 113.6509151],
   },
   {
-    name: "Aarhus, Denmark Office / Showroom",
+    name: "Aarhus, Denmark Office",
     address: "Langdalsvej 46, Building 2, 8220 Brabrand, Denmark",
     coordinates: [56.1569594, 10.0974695],
   },
   {
-    name: "UK Office / Showroom",
+    name: "UK Office",
     address: "1000 London Wall, London, EC2M 5NT, United Kingdom",
     coordinates: [51.520008, -0.080032],
   },
@@ -31,7 +31,7 @@ export const OFFICES = [
 
 export const CONTACTS = [
   {
-    area: "asia",
+    area: "int",
     role: "ownerFounder",
     person: "Eric Ng",
     phone: "+852 9199 9155",
@@ -174,4 +174,10 @@ export const PRODUCT_IMAGES = [
     parallax: -50,
     name: "superName",
   },
+];
+
+export const METRIC_ITEMS = [
+  { end: 30, text: "metric1" },
+  { end: 70, text: "metric2" },
+  { end: 24, text: "metric3" },
 ];

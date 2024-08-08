@@ -1,6 +1,7 @@
 import { motion, useInView, useScroll, useTransform } from "framer-motion";
 import React, { useRef } from "react";
 import CountUp from "react-countup";
+import { METRIC_ITEMS } from "../../../../../constants";
 
 export default function Metrics({ t }) {
   const metricsRef = useRef(null);
@@ -9,12 +10,6 @@ export default function Metrics({ t }) {
     target: metricsRef,
     offset: ["start end", "end start"],
   });
-
-  const metricItems = [
-    { end: 200, text: "satisfiedClients" },
-    { end: 30, text: "partners" },
-    { end: 24, text: "yearsOfExperience" },
-  ];
 
   return (
     <section
@@ -35,7 +30,7 @@ export default function Metrics({ t }) {
           ),
         }}
       >
-        {metricItems.map((item, index) => (
+        {METRIC_ITEMS.map((item, index) => (
           <MetricItem
             key={index}
             end={item.end}

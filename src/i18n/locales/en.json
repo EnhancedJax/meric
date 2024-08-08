@@ -7,42 +7,42 @@
   },
   "home": {
     "hero": {
-      "p": "We are professionals specializing in footwear design and sourcing."
+      "p": "We are professionals specializing in footwear sourcing and design."
     },
     "section1": {
       "trustedBy": "Trusted by",
       "h1": "About Us",
-      "p": "We are a footwear design and sourcing agency that has been established for 24+ years.",
-      "p2": "Over the years, our agency has worked on hundred of projects and had become a trusted ally of numerous B2B clients.",
-      "satisfiedClients": "Satisfied Clients",
-      "yearsOfExperience": "Years of Experience",
-      "partners": "Partners"
+      "p": "We are a footwear sourcing and design agency that has been established for 24+ years.",
+      "p2": "Over the years, our agency has worked on countless projects reaching over 70 countries and had become a trusted ally of numerous B2B clients.",
+      "metric1": "Collaborations with Local Factories ",
+      "metric2": "Years of Experience",
+      "metric3": "Partners"
     },
     "section2": {
       "h1": "Our Services",
       "p": "We offer a one-stop experience to produce a wide-range of footwear exceptionally",
       "s1": "Design & Development",
-      "s1title": "TBC",
-      "s1p": "TBC",
+      "s1title": "Our design evolves with time",
+      "s1p": "With our skilled team of international designers, we work with a wide variety of footwear accomadating for different occasions and all genders.\n All samples are made in our own sample rooms.",
       "s2": "Sourcing & Production",
-      "s2title": "TBC",
-      "s2p": "TBC",
+      "s2title": "We accomadate for every needs",
+      "s2p": "Our dedicated team of merchandisers help with sourcing of any kind. We source both locally and worldwide, and maintain longstanding collaborations with more than 30 factories in China, all covering different tecniques.\n As a member of Sedex and working with SMETA, BSCI controlled factories, we aim to be both socially and environmentally sustainable.",
       "s3": "Quality Assessments",
-      "s3title": "TBC",
-      "s3p": "TBC"
+      "s3title": "We make sure quality is up to standards",
+      "s3p": "Alongside our own QC team, in-house tests ensure quality requirements are met when our products get to the hands of our clients.\n 1. Abrasion Test\n 2. Waterproof Test\n 3. Anti-Yellowing and Aging Test\n 4. Adhesion Test"
     },
     "section3": {
       "h1": "Our Products",
-      "title": "TBC, Just choose us. Any shoe you want. Large shoes or whatever.",
+      "title": "Walk the talk",
       "p": "All ages and genders ⋅ Fashion / Sports / Leisure"
     },
     "contact": {
       "h1": "Let's work together",
-      "p": "Tell us some information and we'll get back to you soon!",
+      "p": "Tell us your idea and we'll get back to you soon!",
       "contactUs": "Contact Us",
-      "contactUsP": "Call us Mon-Fri from 8am to 5pm, or shoot us an email!",
-      "clientsOperatingIn": "Clients operating in",
-      "asia": "Asia",
+      "contactUsP": "Call us or shoot us an email!",
+      "clientsOperatingIn": "",
+      "int": "Intenational",
       "eu": "Europe",
       "ownerFounder": "Main Owner & Founder",
       "ceoPartner": "CEO & Partner",

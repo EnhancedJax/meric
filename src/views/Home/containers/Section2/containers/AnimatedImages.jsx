@@ -3,7 +3,11 @@ import { SERVICES_IMAGES } from "../../../../../constants";
 
 export default function AnimatedImages({ activePart }) {
   return (
-    <>
+    <div className="absolute z-10 md:w-[300px] lg:w-[500px] h-full bg-text-5 top-0 left-0 flex justify-center items-center">
+      <img
+        src="section2_pattern.svg"
+        className="absolute bottom-0 left-0 origin-bottom-left -z-10"
+      />
       {SERVICES_IMAGES.map((item, index) => (
         <AnimatedImageGroup
           key={`Section2-imagecontainer-${index}`}
@@ -12,7 +16,7 @@ export default function AnimatedImages({ activePart }) {
           index={index}
         />
       ))}
-    </>
+    </div>
   );
 }
 
