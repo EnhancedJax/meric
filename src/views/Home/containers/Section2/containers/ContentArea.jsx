@@ -35,6 +35,7 @@ export default function ContentArea({
               <AnimatedImageGroup
                 activePart={activePart}
                 index={i}
+                noDelay
                 item={SERVICES_IMAGES[i]}
               />
             </div>
@@ -50,7 +51,7 @@ export default function ContentArea({
             <h2 className="mb-6 -ml-10 text-4xl md:ml-0">
               {t(`home.section2.s${i + 1}title`)}
             </h2>
-            <MP>{t(`home.section2.s${i + 1}p`)}</MP>
+            <MP className="text-lg">{t(`home.section2.s${i + 1}p`)}</MP>
             {i == 2 && (
               <div className="flex flex-wrap gap-2 mt-8">
                 {TEST_ICONS.map((Icon, index) => (

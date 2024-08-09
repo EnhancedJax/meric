@@ -16,7 +16,7 @@ export default function Metrics({ t }) {
       ref={metricsRef}
       className="w-full py-12 text-white md:py-8"
       style={{
-        backgroundImage: "url(section1_bg.jpg)",
+        backgroundImage: "url(section1_bg.webp)",
         backgroundPosition: "bottom right",
       }}
     >

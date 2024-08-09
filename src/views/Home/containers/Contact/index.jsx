@@ -25,7 +25,7 @@ export default function Contact() {
       id="section-contact"
       className="flex pb-20 bg-cover bg-text md:h-[1200px] pt-24 md:pt-0 w-full px-6 md:px-12 relative"
       style={{
-        backgroundImage: "url('contact_bg.png')",
+        backgroundImage: "url('contact_bg.webp')",
         backgroundPosition: "center",
       }}
       ref={ref}
@@ -58,7 +58,7 @@ export default function Contact() {
           <h1 className="text-5xl font-bold md:text-6xl">
             {t("home.contact.h1")}
           </h1>
-          <div>{t("home.contact.p")}</div>
+          <p className="mt-4 text-lg">{t("home.contact.p")}</p>
         </div>
         <div className="flex flex-col md:flex-row justify-center gap-16 md:gap-20 md:min-h-[500px] md:h-[500px] clampcontainer">
           <div className="flex flex-col w-full md:w-[360px] gap-12 px-5 md:px-0">
@@ -66,9 +66,7 @@ export default function Contact() {
               <h3 className="text-2xl mb-2.5 font-medium">
                 {t("home.contact.contactUs")}
               </h3>
-              <p className="text-sm text-gray">
-                {t("home.contact.contactUsP")}
-              </p>
+              <p className="text text-gray">{t("home.contact.contactUsP")}</p>
             </div>
             {CONTACTS.map((contact) => (
               <div key={contact.area} className="gap-2.5 flex flex-col">
@@ -115,7 +113,7 @@ export default function Contact() {
               <h3 className="text-2xl mb-2.5 font-medium">
                 {t("home.contact.visitUs")}
               </h3>
-              <p className="text-sm text-gray">{t("home.contact.visitUsP")}</p>
+              <p className=" text-gray">{t("home.contact.visitUsP")}</p>
             </div>
             {!isMd && (
               <div className="flex justify-center">

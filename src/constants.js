@@ -191,4 +191,19 @@ export const CLIENTS = [
   },
 ];
 
+export const LANGS = [
+  {
+    lang: "en",
+    label: "En",
+  },
+  {
+    lang: "zh-HK",
+    label: "繁",
+  },
+  // {
+  //   lang: "zh-CN",
+  //   label: "简",
+  // },
+];
+
 export const TEST_ICONS = [BookCheck, Droplets, Sparkles, Split];

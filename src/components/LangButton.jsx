@@ -2,6 +2,7 @@ import { AnimatePresence, motion } from "framer-motion";
 import { Languages } from "lucide-react";
 import { useState } from "react";
 import { useTranslation } from "react-i18next";
+import { LANGS } from "../constants";
 
 export default function LangButton() {
   const [expanded, setExpanded] = useState(false);
@@ -28,16 +29,16 @@ export default function LangButton() {
           </motion.div>
         ) : (
           <motion.div
-            className="flex items-center justify-center gap-2 pl-3"
+            className="flex items-center justify-center gap-2 pl-3 pr-4"
             variants={langSelectorContainer}
             initial="initial"
             animate="animate"
             exit="exit"
             key="lang-selector"
           >
-            <LangSelector lang="en-US" text="EN" />
-            <LangSelector lang="zh-HK" text="繁" />
-            <LangSelector lang="zh-CN" text="中" />
+            {LANGS.map((lang) => (
+              <LangSelector lang={lang.lang} text={lang.label} />
+            ))}
           </motion.div>
         )}
       </AnimatePresence>
@@ -49,6 +50,7 @@ function LangSelector({ lang, text }) {
   const { i18n } = useTranslation();
   return (
     <motion.button
+      aria-label={`Change language to ${lang}`}
       variants={langSelectorItem}
       onClick={() => i18n.changeLanguage(lang)}
       className={`flex items-center justify-center w-8 h-8 text-sm rounded-full ${
@@ -63,7 +65,7 @@ function LangSelector({ lang, text }) {
 
 const container = {
   initial: { width: 42, height: 42 },
-  expanded: { width: 160, height: 42 },
+  expanded: { width: 55 + 35 * LANGS.length, height: 42 },
 };
 
 const slide = {

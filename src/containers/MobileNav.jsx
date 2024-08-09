@@ -25,7 +25,7 @@ export default function MobileNav() {
       <AnimatePresence>
         {isOpen && (
           <motion.div
-            className="fixed top-0 right-0 z-40 w-full h-full border-2 border-text backdrop-blur-sm"
+            className="fixed top-0 right-0 z-40 w-full h-full backdrop-blur-sm"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
@@ -42,8 +42,8 @@ export default function MobileNav() {
                     setIsOpen(false);
                   }}
                 >
-                  <img src="logo.png" alt="logo" className="h-full mr-4" />
-                  <img src="logo_text.png" alt="meric" className="w-32" />
+                  <img src="logo.webp" alt="logo" className="h-full mr-4" />
+                  <img src="logo_text.webp" alt="meric" className="w-32" />
                 </button>
               </div>
               <div className="flex flex-col items-end justify-end flex-grow gap-8">

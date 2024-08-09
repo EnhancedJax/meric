@@ -21,7 +21,7 @@ const CenterContent = React.forwardRef(({ scrollYProgress, t }, ref) => {
           <H1 text={t("home.section3.h1")} />
         </div>
         <h2 className="mb-6 text-5xl font-bold">{t("home.section3.title")}</h2>
-        <p>{t("home.section3.p")}</p>
+        <p className="text-lg">{t("home.section3.p")}</p>
       </motion.div>
     </div>
   );

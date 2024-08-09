@@ -7,6 +7,7 @@ export default function AnimatedImages({ activePart }) {
       <img
         src="section2_pattern.svg"
         className="absolute bottom-0 left-0 origin-bottom-left -z-10"
+        alt=""
       />
       {SERVICES_IMAGES.map((item, index) => (
         <AnimatedImageGroup
@@ -20,7 +21,12 @@ export default function AnimatedImages({ activePart }) {
   );
 }
 
-export function AnimatedImageGroup({ item, activePart, index }) {
+export function AnimatedImageGroup({
+  item,
+  activePart,
+  index,
+  noDelay = false,
+}) {
   const direction = activePart > index ? -1 : 1; // down is -1, up is 1
   const shouldAnimate = activePart === index;
   return (
@@ -32,6 +38,7 @@ export function AnimatedImageGroup({ item, activePart, index }) {
             image={item[imageIndex]}
             imgIndex={imageIndex}
             direction={direction}
+            noDelay={noDelay}
             shouldAnimate={shouldAnimate}
           />
         ))}
@@ -43,6 +50,7 @@ export function AnimatedImageGroup({ item, activePart, index }) {
             image={item[imageIndex]}
             imgIndex={imageIndex}
             direction={direction}
+            noDelay={noDelay}
             shouldAnimate={shouldAnimate}
           />
         ))}
@@ -51,7 +59,13 @@ export function AnimatedImageGroup({ item, activePart, index }) {
   );
 }
 
-const AnimatedImage = ({ image, direction, shouldAnimate, imgIndex }) => {
+const AnimatedImage = ({
+  image,
+  direction,
+  shouldAnimate,
+  imgIndex,
+  noDelay,
+}) => {
   return (
     <motion.img
       src={image}
@@ -64,7 +78,7 @@ const AnimatedImage = ({ image, direction, shouldAnimate, imgIndex }) => {
       }
       transition={{
         duration: 0.3 + imgIndex * 0.1,
-        delay: shouldAnimate ? 0.3 : 0,
+        delay: shouldAnimate && !noDelay ? 0.3 : 0,
         ease: "circInOut",
       }}
     />

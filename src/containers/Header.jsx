@@ -33,42 +33,48 @@ export default function Header() {
           }}
           className="absolute -translate-x-1/2 -translate-y-1/2 left-1/2 top-1/2"
         >
-          <img src="logo.png" alt="logo" className="h-10" />
+          <img src="logo.webp" alt="logo" className="h-10" />
         </button>
         <ul className="flex items-center gap-5 text-sm text-text">
-          <a
-            href="#section-about"
-            onClick={() => {
-              lenis.scrollTo("#section-about");
-            }}
-            data-cursor-icon="ArrowUpRight"
-            data-cursor-icon-color="text"
-            className="cursor-none"
-          >
-            <li>{t("header.about")}</li>
-          </a>
-          <a
-            href="#section-services"
-            onClick={() => {
-              lenis.scrollTo("#section-services");
-            }}
-            data-cursor-icon="ArrowUpRight"
-            data-cursor-icon-color="text"
-            className="cursor-none"
-          >
-            <li>{t("header.services")}</li>
-          </a>
-          <a
-            href="#section-products"
-            onClick={() => {
-              lenis.scrollTo("#section-products");
-            }}
-            data-cursor-icon="ArrowUpRight"
-            data-cursor-icon-color="text"
-            className="cursor-none"
-          >
-            <li>{t("header.products")}</li>
-          </a>
+          <li>
+            <a
+              href="#section-about"
+              onClick={() => {
+                lenis.scrollTo("#section-about");
+              }}
+              data-cursor-icon="ArrowUpRight"
+              data-cursor-icon-color="text"
+              className="cursor-none"
+            >
+              {t("header.about")}
+            </a>
+          </li>
+          <li>
+            <a
+              href="#section-services"
+              onClick={() => {
+                lenis.scrollTo("#section-services");
+              }}
+              data-cursor-icon="ArrowUpRight"
+              data-cursor-icon-color="text"
+              className="cursor-none"
+            >
+              {t("header.services")}
+            </a>
+          </li>
+          <li>
+            <a
+              href="#section-products"
+              onClick={() => {
+                lenis.scrollTo("#section-products");
+              }}
+              data-cursor-icon="ArrowUpRight"
+              data-cursor-icon-color="text"
+              className="cursor-none"
+            >
+              {t("header.products")}
+            </a>
+          </li>
         </ul>
         <div className="flex gap-5">
           <a
