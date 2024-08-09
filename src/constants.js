@@ -26,7 +26,7 @@ export const OFFICES = [
   },
   {
     name: "UK Office",
-    address: "1000 London Wall, London, EC2M 5NT, United Kingdom",
+    address: "TBC",
     coordinates: [51.520008, -0.080032],
   },
 ];
