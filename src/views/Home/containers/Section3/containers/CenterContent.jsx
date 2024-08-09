@@ -18,7 +18,7 @@ const CenterContent = React.forwardRef(({ scrollYProgress, t }, ref) => {
       >
         <GradientBlob />
         <div className="mb-3 w-fit">
-          <H1>{t("home.section3.h1")}</H1>
+          <H1 text={t("home.section3.h1")} />
         </div>
         <h2 className="mb-6 text-5xl font-bold">{t("home.section3.title")}</h2>
         <p>{t("home.section3.p")}</p>

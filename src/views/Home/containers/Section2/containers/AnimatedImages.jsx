@@ -3,7 +3,7 @@ import { SERVICES_IMAGES } from "../../../../../constants";
 
 export default function AnimatedImages({ activePart }) {
   return (
-    <div className="absolute z-10 md:w-[300px] lg:w-[500px] h-full bg-text-5 top-0 left-0 flex justify-center items-center">
+    <div className="absolute top-0 left-0 z-10 flex items-center justify-center h-full md:w-1/3 bg-text-5">
       <img
         src="section2_pattern.svg"
         className="absolute bottom-0 left-0 origin-bottom-left -z-10"
@@ -56,6 +56,7 @@ const AnimatedImage = ({ image, direction, shouldAnimate, imgIndex }) => {
     <motion.img
       src={image}
       className="w-full aspect-square rounded-tl-3xl rounded-br-3xl"
+      alt={`Section2-image-${imgIndex}`}
       animate={
         shouldAnimate
           ? { y: 0, opacity: 1 }

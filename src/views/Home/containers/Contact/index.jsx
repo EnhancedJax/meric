@@ -4,8 +4,10 @@ import { useInView } from "react-hook-inview";
 import { useTranslation } from "react-i18next";
 import Accordion from "../../../../components/Accordion";
 import { Cobe } from "../../../../components/Cobe";
+import VerticalMarquee from "../../../../components/VerticalMarquee";
 import { CONTACTS, OFFICES } from "../../../../constants";
 import { useTailwindBreakpoint } from "../../../../hooks/useTailwindBreakpoint";
+import Background from "./containers/Background";
 import { CobeContainer, MobileCobeContainer } from "./styles";
 
 export default function Contact() {
@@ -21,13 +23,26 @@ export default function Contact() {
   return (
     <section
       id="section-contact"
-      className="flex pb-20 bg-cover bg-text md:h-[1200px] pt-24 md:pt-0 w-full px-6 md:px-12"
+      className="flex pb-20 bg-cover bg-text md:h-[1200px] pt-24 md:pt-0 w-full px-6 md:px-12 relative"
       style={{
-        backgroundImage: "url('ContactBackground.png')",
+        backgroundImage: "url('contact_bg.png')",
         backgroundPosition: "center",
       }}
       ref={ref}
     >
+      <div className="absolute top-0 left-0 flex w-full h-full md:items-center">
+        <VerticalMarquee
+          className="w-full overflow-hidden h-1/2 md:h-1/2"
+          speed="15"
+          style={{
+            maskImage: isMd
+              ? "radial-gradient(at center, white 10%, transparent 80%)"
+              : "linear-gradient(to top, transparent, white)",
+          }}
+        >
+          <Background className="w-full h-full" />
+        </VerticalMarquee>
+      </div>
       <div className="relative flex flex-col items-center justify-end gap-20 text-white clampcontainer">
         {isMd && (
           <CobeContainer data-cursor-icon="Grab">

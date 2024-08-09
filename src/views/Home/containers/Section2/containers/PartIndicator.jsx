@@ -1,8 +1,10 @@
 import { motion } from "framer-motion";
+import { useLenis } from "lenis/react";
 
 export default function PartIndicator({ activePart, t }) {
+  const lenis = useLenis();
   return (
-    <div className="absolute z-10 w-[130px] h-full top-0 left-4 right-auto md:left-auto md:right-8 flex flex-col justify-center items-center space-y-4">
+    <div className="absolute z-10 w-[130px] h-full top-12 md:top-0 left-4 md:left-[85%] flex flex-col md:justify-center items-center space-y-4 text-sm md:text-base lg:text-lg">
       {[
         t("home.section2.s1"),
         t("home.section2.s2"),
@@ -11,6 +13,8 @@ export default function PartIndicator({ activePart, t }) {
         <div
           key={`Indicator-${index}`}
           className="relative flex items-center w-full h-14"
+          // data-cursor-icon="ArrowUpRight"
+          // data-cursor-icon-color="text"
         >
           {activePart === index && (
             <motion.div

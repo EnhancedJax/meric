@@ -14,13 +14,13 @@
       "h1": "About Us",
       "p": "We are a footwear sourcing and design agency that has been established for 24+ years.",
       "p2": "Over the years, our agency has worked on countless projects reaching over 70 countries and had become a trusted ally of numerous B2B clients.",
-      "metric1": "Collaborations with Local Factories ",
-      "metric2": "Years of Experience",
-      "metric3": "Partners"
+      "metric1": "Collaborations with Local Factories",
+      "metric2": "Countries Reached",
+      "metric3": "Years in Business"
     },
     "section2": {
       "h1": "Our Services",
-      "p": "We offer a one-stop experience to produce a wide-range of footwear exceptionally",
+      "p": "Walk the talk! We offer a one-stop experience to produce a wide-range of footwear, making your ideas come to life.",
       "s1": "Design & Development",
       "s1title": "Our design evolves with time",
       "s1p": "With our skilled team of international designers, we work with a wide variety of footwear accomadating for different occasions and all genders.\n All samples are made in our own sample rooms.",
@@ -29,11 +29,15 @@
       "s2p": "Our dedicated team of merchandisers help with sourcing of any kind. We source both locally and worldwide, and maintain longstanding collaborations with more than 30 factories in China, all covering different tecniques.\n As a member of Sedex and working with SMETA, BSCI controlled factories, we aim to be both socially and environmentally sustainable.",
       "s3": "Quality Assessments",
       "s3title": "We make sure quality is up to standards",
-      "s3p": "Alongside our own QC team, in-house tests ensure quality requirements are met when our products get to the hands of our clients.\n 1. Abrasion Test\n 2. Waterproof Test\n 3. Anti-Yellowing and Aging Test\n 4. Adhesion Test"
+      "s3p": "Alongside our own QC team, in-house tests ensure quality requirements are met when our products get to the hands of our clients.",
+      "t0": "Abrasion Test",
+      "t1": "Waterproof Test",
+      "t2": "Anti-Yellowing and Aging Test",
+      "t3": "Adhesion Test"
     },
     "section3": {
       "h1": "Our Products",
-      "title": "Walk the talk",
+      "title": "TBC",
       "p": "All ages and genders ⋅ Fashion / Sports / Leisure"
     },
     "contact": {

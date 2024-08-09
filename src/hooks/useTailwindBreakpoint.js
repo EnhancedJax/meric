@@ -17,7 +17,6 @@ export function useTailwindBreakpoint(breakpoint) {
         return;
       }
 
-      console.log("this", window.innerWidth >= breakpointWidth);
       setIsAboveBreakpoint(window.innerWidth >= breakpointWidth);
     };
 

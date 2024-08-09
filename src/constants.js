@@ -1,3 +1,5 @@
+import { BookCheck, Droplets, Sparkles, Split } from "lucide-react";
+
 export const OFFICES = [
   {
     name: "Hong Kong HQ",
@@ -181,3 +183,12 @@ export const METRIC_ITEMS = [
   { end: 70, text: "metric2" },
   { end: 24, text: "metric3" },
 ];
+
+export const CLIENTS = [
+  {
+    name: "Disney",
+    img: "disney",
+  },
+];
+
+export const TEST_ICONS = [BookCheck, Droplets, Sparkles, Split];

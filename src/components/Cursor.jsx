@@ -60,7 +60,7 @@ export default function Cursor() {
       });
 
       gsap.to(cursorCircle, {
-        opacity: toExpand ? 0.6 : 1,
+        opacity: toExpand ? 0.5 : 0.7,
         transform: `scale(${toExpand ? 3.5 : 1})`,
         duration: 1,
         ease: "elastic",

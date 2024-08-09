@@ -45,7 +45,7 @@ export default function Metrics({ t }) {
 
 function MetricItem({ end, text, inView }) {
   return (
-    <div className="flex flex-col gap-2.5 md:gap-5">
+    <div className="flex flex-col gap-2.5 md:gap-5 w-32 px-2 md:px-0 text-center md:text-left items-center md:items-start md:w-40 md:justify-center">
       <span className="text-5xl font-bold md:text-7xl">
         <CountUp start={inView ? 0 : null} end={end} duration={2} />+
       </span>

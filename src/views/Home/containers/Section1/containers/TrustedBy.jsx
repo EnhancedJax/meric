@@ -1,5 +1,6 @@
 import React from "react";
 import Marquee from "react-fast-marquee";
+import { CLIENTS } from "../../../../../constants";
 
 export default function TrustedBy({ t }) {
   return (
@@ -8,12 +9,14 @@ export default function TrustedBy({ t }) {
         {t("home.section1.trustedBy")}
       </p>
       <Marquee autoFill gradient className="h-12">
-        <img
-          src="brands/disney.png"
-          className="h-12 mr-6 md:mr-12"
-          alt="Disney logo"
-        />
-        {/* Add more brand logos here */}
+        {CLIENTS.map((client, index) => (
+          <img
+            src={`brands/${client.img}.png`}
+            key={`Section1-TrustedBy-${index}`}
+            className="h-12 mr-6 md:mr-12"
+            alt={`${client.name} logo`}
+          />
+        ))}
       </Marquee>
     </section>
   );

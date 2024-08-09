@@ -6,21 +6,22 @@ import { Route, BrowserRouter as Router, Routes } from "react-router-dom";
 import "./App.css";
 import Cursor from "./components/Cursor";
 import Footer from "./containers/Footer";
-// import Header from "./containers/Header";
+import Header from "./containers/Header";
+import MobileNav from "./containers/MobileNav";
+import { useTailwindBreakpoint } from "./hooks/useTailwindBreakpoint";
 import i18n from "./i18n";
 import HomePage from "./views/Home";
-import PrivacyPolicy from "./views/PrivacyPolicy";
 
 function App() {
+  const isMd = useTailwindBreakpoint("md");
   return (
     <I18nextProvider i18n={i18n}>
       <ThemeProvider>
         <Router>
           <ReactLenis root>
-            {/* <Header /> */}
+            {isMd ? <Header /> : <MobileNav />}
             <Routes>
               <Route path="/" element={<HomePage />} />
-              <Route path="/privacy-policy" element={<PrivacyPolicy />} />
             </Routes>
             <Footer />
             <Cursor />
