@@ -29,7 +29,11 @@ export default function Header() {
       <nav className="relative flex items-center justify-between w-full mx-auto">
         <button
           onClick={() => {
-            lenis.scrollTo("#hero");
+            lenis.scrollTo("#hero", {
+              onComplete: () => {
+                setVisible(false);
+              },
+            });
           }}
           className="absolute -translate-x-1/2 -translate-y-1/2 left-1/2 top-1/2"
         >
@@ -40,7 +44,11 @@ export default function Header() {
             <a
               href="#section-about"
               onClick={() => {
-                lenis.scrollTo("#section-about");
+                lenis.scrollTo("#section-about", {
+                  onComplete: () => {
+                    setVisible(false);
+                  },
+                });
               }}
               data-cursor-icon="ArrowUpRight"
               data-cursor-icon-color="text"
@@ -53,7 +61,11 @@ export default function Header() {
             <a
               href="#section-services"
               onClick={() => {
-                lenis.scrollTo("#section-services");
+                lenis.scrollTo("#section-services", {
+                  onComplete: () => {
+                    setVisible(false);
+                  },
+                });
               }}
               data-cursor-icon="ArrowUpRight"
               data-cursor-icon-color="text"
@@ -66,7 +78,11 @@ export default function Header() {
             <a
               href="#section-products"
               onClick={() => {
-                lenis.scrollTo("#section-products");
+                lenis.scrollTo("#section-products", {
+                  onComplete: () => {
+                    setVisible(false);
+                  },
+                });
               }}
               data-cursor-icon="ArrowUpRight"
               data-cursor-icon-color="text"
@@ -80,7 +96,11 @@ export default function Header() {
           <a
             href="#section-contact"
             onClick={() => {
-              lenis.scrollTo("#section-contact");
+              lenis.scrollTo("#section-contact", {
+                onComplete: () => {
+                  setVisible(false);
+                },
+              });
             }}
             data-cursor-icon="ArrowUpRight"
             className="px-10 bg-secondary rounded-tl-[35px] rounded-br-[35px] flex items-center cursor-none"

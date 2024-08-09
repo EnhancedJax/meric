@@ -29,7 +29,9 @@ export default function ProductImages({ scrollYProgress, isMd }) {
               src={image.src}
               alt={`${image.name}-${index}`}
             />
-            <p>{image.name}</p>
+            <p className="w-full p-1 font-medium text-center drop-shadow-md">
+              {image.name}
+            </p>
           </motion.div>
         </div>
       ))}

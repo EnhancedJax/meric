@@ -23,13 +23,13 @@ export default function Hero() {
       ref={sectionRef}
       className="flex items-center flex-col justify-center w-full h-screen p-6 border-b-[0.5px] bg-background border-text-50 md:p-12"
     >
-      <div className="absolute z-10 flex justify-center w-full mb-40 overflow-hidden md:mb-40 lg:mb-80">
+      <div className="absolute z-10 flex justify-center w-full mb-64 overflow-hidden md:mb-40 lg:mb-80">
         <motion.div
           style={{
             scale: useTransform(scrollYProgress, [0, 1], [1, 2]),
           }}
         >
-          <h1 className="text-primary font-bold text-[100px] md:text-[180px] lg:text-[256px] leading-none origin-center whitespace-nowrap">
+          <h1 className="text-primary drop-shadow-lg font-bold text-[80px] sm:text-[140px] md:text-[180px] lg:text-[200px] xl:text-[256px] leading-none origin-center whitespace-nowrap">
             {["M", "E", "R", "I", "C"].map((letter, index) => (
               <motion.span
                 key={index}
@@ -43,12 +43,12 @@ export default function Hero() {
             ))}
           </h1>
         </motion.div>
-        <WhiteBlob />
+        <WhiteBlob className="h-[200%] md:h-[150%]" />
       </div>
       <CycleImages
         images={images}
         interval={1000}
-        className="z-20 max-h-[60%]"
+        className="z-20 max-h-[60%] max-w-[80%]"
       />
       <VerticalMarquee
         className="absolute w-full h-screen overflow-hidden"

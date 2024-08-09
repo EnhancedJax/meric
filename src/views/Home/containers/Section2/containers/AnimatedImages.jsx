@@ -79,7 +79,7 @@ const AnimatedImage = ({
       transition={{
         duration: 0.3 + imgIndex * 0.1,
         delay: shouldAnimate && !noDelay ? 0.3 : 0,
-        ease: "circInOut",
+        ease: "anticipate",
       }}
     />
   );

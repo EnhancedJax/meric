@@ -54,14 +54,14 @@ export default function Contact() {
             )}
           </CobeContainer>
         )}
-        <div className="md:w-[630px] text-center z-10">
-          <h1 className="text-5xl font-bold md:text-6xl">
+        <div className="md:w-[630px] text-center z-10 w-full ">
+          <h1 className="text-4xl font-bold break-words sm:text-5xl md:text-6xl">
             {t("home.contact.h1")}
           </h1>
           <p className="mt-4 text-lg">{t("home.contact.p")}</p>
         </div>
         <div className="flex flex-col md:flex-row justify-center gap-16 md:gap-20 md:min-h-[500px] md:h-[500px] clampcontainer">
-          <div className="flex flex-col w-full md:w-[360px] gap-12 px-5 md:px-0">
+          <div className="flex flex-col w-full gap-12 px-5 md:px-0">
             <div>
               <h3 className="text-2xl mb-2.5 font-medium">
                 {t("home.contact.contactUs")}
@@ -108,7 +108,7 @@ export default function Contact() {
             ))}
           </div>
 
-          <div className="flex flex-col w-full md:w-[360px] gap-6 md:gap-12 bg-black rounded-xl border border-neutral-600 p-5 md:p-0 md:border-none md:bg-transparent">
+          <div className="flex flex-col w-full gap-6 p-5 bg-black border md:gap-12 rounded-xl border-neutral-600 md:p-0 md:border-none md:bg-transparent">
             <div>
               <h3 className="text-2xl mb-2.5 font-medium">
                 {t("home.contact.visitUs")}
@@ -116,7 +116,7 @@ export default function Contact() {
               <p className=" text-gray">{t("home.contact.visitUsP")}</p>
             </div>
             {!isMd && (
-              <div className="flex justify-center">
+              <div className="flex justify-center w-full">
                 <MobileCobeContainer>
                   {inView && (
                     <Cobe

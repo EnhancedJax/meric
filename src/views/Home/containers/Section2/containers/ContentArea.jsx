@@ -31,7 +31,7 @@ export default function ContentArea({
       {[0, 1, 2].map((i, index) => (
         <div key={`Section2-content-${i}`}>
           {!isMd && (
-            <div className="relative w-full h-[35vh] mb-12">
+            <div className="relative w-full h-[35vh] mb-12 ">
               <AnimatedImageGroup
                 activePart={activePart}
                 index={i}

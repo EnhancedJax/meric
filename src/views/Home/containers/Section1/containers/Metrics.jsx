@@ -32,7 +32,7 @@ export default function Metrics({ t }) {
       >
         {METRIC_ITEMS.map((item, index) => (
           <MetricItem
-            key={index}
+            key={`Section1-Metric-${index}`}
             end={item.end}
             text={t(`home.section1.${item.text}`)}
             inView={metricsInView}
@@ -45,11 +45,11 @@ export default function Metrics({ t }) {
 
 function MetricItem({ end, text, inView }) {
   return (
-    <div className="flex flex-col gap-2.5 md:gap-5 w-32 px-2 md:px-0 text-center md:text-left items-center md:items-start md:w-40 md:justify-center">
+    <div className="flex flex-col gap-2.5 md:gap-5 w-32 px-2 md:px-0 text-center md:text-left items-center md:w-40 md:justify-center">
       <span className="text-5xl font-bold md:text-7xl">
         <CountUp start={inView ? 0 : null} end={end} duration={2} />+
       </span>
-      <span className="text-sm font-light md:text-lg">{text}</span>
+      <span className="text-sm font-light md:text-base">{text}</span>
     </div>
   );
 }

@@ -11,8 +11,9 @@ export const CobeContainer = styled.div`
 `;
 
 export const MobileCobeContainer = styled.div`
-  width: 300px;
-  height: 300px;
+  width: 100%;
+  max-width: 300px;
+  aspect-ratio: 1/1;
   position: static;
   top: 0;
 `;
