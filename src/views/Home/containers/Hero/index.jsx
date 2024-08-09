@@ -29,7 +29,7 @@ export default function Hero() {
             scale: useTransform(scrollYProgress, [0, 1], [1, 2]),
           }}
         >
-          <h1 className="text-primary drop-shadow-lg font-bold text-[80px] sm:text-[140px] md:text-[180px] lg:text-[200px] xl:text-[256px] leading-none origin-center whitespace-nowrap">
+          <h1 className="text-primary drop-shadow-lg xl:drop-shadow-none font-bold text-[80px] sm:text-[140px] md:text-[180px] lg:text-[200px] xl:text-[256px] leading-none origin-center whitespace-nowrap">
             {["M", "E", "R", "I", "C"].map((letter, index) => (
               <motion.span
                 key={index}

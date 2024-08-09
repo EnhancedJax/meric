@@ -9,6 +9,7 @@ import { setupScrollTrigger } from "./utils/scrollTrigger";
 
 export default function Section2() {
   const sectionRef = useRef(null);
+  const animatedImagesRef = useRef(null);
   const contentRef = useRef(null);
   const content1Ref = useRef(null);
   const content2Ref = useRef(null);
@@ -21,6 +22,7 @@ export default function Section2() {
     const cleanup = setupScrollTrigger(
       sectionRef,
       contentRef,
+      animatedImagesRef,
       [content1Ref, content2Ref, content3Ref],
       setActivePart,
       isMd
@@ -35,7 +37,12 @@ export default function Section2() {
         ref={sectionRef}
         className="relative w-full h-screen py-4 overflow-hidden"
       >
-        {isMd && <AnimatedImages activePart={activePart} />}
+        {isMd && (
+          <AnimatedImages
+            activePart={activePart}
+            animatedImagesRef={animatedImagesRef}
+          />
+        )}
         <PartIndicator activePart={activePart} t={t} />
         <ContentArea
           contentRef={contentRef}

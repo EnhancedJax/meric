@@ -5,6 +5,10 @@ export const WhiteBlob = styled.div`
   top: 0;
   left: 0;
   margin: auto;
-  background: radial-gradient(closest-side, white 20%, transparent 100%);
+  background: radial-gradient(
+    closest-side,
+    rgb(var(--background)) 20%,
+    transparent 100%
+  );
   width: 100%;
 `;

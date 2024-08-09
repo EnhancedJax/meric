@@ -6,6 +6,7 @@ gsap.registerPlugin(ScrollTrigger);
 export function setupScrollTrigger(
   sectionRef,
   contentRef,
+  animatedImagesRef,
   contentRefs,
   setActivePart,
   isMd
@@ -27,7 +28,13 @@ export function setupScrollTrigger(
           duration: 0,
         });
 
-        // Update Part colors
+        animatedImagesRef.current &&
+          gsap.to(animatedImagesRef.current, {
+            opacity: progress > 0.9 ? 1 - (progress - 0.9) * 10 : 1,
+            translateX: progress > 0.9 ? (progress - 0.9) * 10 * -200 : 0,
+            duration: 0,
+          });
+
         const sectionHeight = section.offsetHeight;
         const threshold = isMd ? 0.6 : 1;
 

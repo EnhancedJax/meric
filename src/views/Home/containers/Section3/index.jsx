@@ -26,7 +26,7 @@ export default function Section3() {
   return (
     <section
       id="section-products"
-      className="relative w-full h-[200vh] mt-[300px]"
+      className="relative w-full h-[200vh] mt-[200px]"
       ref={sectionRef}
       data-cursor-color="text"
     >

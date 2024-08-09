@@ -3,6 +3,7 @@ import { useLenis } from "lenis/react";
 import { Menu, X } from "lucide-react";
 import { useState } from "react";
 import { useTranslation } from "react-i18next";
+import { LANGS } from "../constants";
 
 export default function MobileNav() {
   const { i18n, t } = useTranslation();
@@ -64,11 +65,7 @@ export default function MobileNav() {
                   animate="open"
                   exit="closed"
                 >
-                  {[
-                    { lang: "en-US", text: "En" },
-                    { lang: "zh-HK", text: "繁" },
-                    { lang: "zh-CN", text: "中" },
-                  ].map((item, index) => (
+                  {LANGS.map((item, index) => (
                     <>
                       <motion.button
                         key={index}
@@ -81,9 +78,9 @@ export default function MobileNav() {
                           y: { stiffness: 1000, velocity: -100 },
                         }}
                       >
-                        {item.text}
+                        {item.label}
                       </motion.button>
-                      {index !== 2 && (
+                      {index !== LANGS.length - 1 && (
                         <motion.span
                           variants={{
                             open: { opacity: 1, x: 0 },

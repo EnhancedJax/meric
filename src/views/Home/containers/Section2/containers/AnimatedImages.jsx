@@ -1,9 +1,12 @@
 import { motion } from "framer-motion";
 import { SERVICES_IMAGES } from "../../../../../constants";
 
-export default function AnimatedImages({ activePart }) {
+export default function AnimatedImages({ activePart, animatedImagesRef }) {
   return (
-    <div className="absolute top-0 left-0 z-10 flex items-center justify-center h-full md:w-1/3 bg-text-5">
+    <div
+      className="absolute top-0 left-0 z-10 flex items-center justify-center h-full md:w-1/3 bg-text-5"
+      ref={animatedImagesRef}
+    >
       <img
         src="section2_pattern.svg"
         className="absolute bottom-0 left-0 origin-bottom-left -z-10"

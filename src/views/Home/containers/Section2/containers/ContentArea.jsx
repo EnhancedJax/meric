@@ -80,7 +80,7 @@ export default function ContentArea({
           </div>
         </div>
       ))}
-      <Spacer height="80vh" />
+      <Spacer height={isMd ? "60vh" : "30vh"} />
     </div>
   );
 }

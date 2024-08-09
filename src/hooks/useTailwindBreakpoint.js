@@ -6,6 +6,7 @@ const fullConfig = resolveConfig(tailwindConfig);
 
 export function useTailwindBreakpoint(breakpoint) {
   const [isAboveBreakpoint, setIsAboveBreakpoint] = useState(false);
+  const [isReady, setIsReady] = useState(false);
 
   useEffect(() => {
     const checkBreakpoint = () => {
@@ -17,14 +18,23 @@ export function useTailwindBreakpoint(breakpoint) {
         return;
       }
 
-      setIsAboveBreakpoint(window.innerWidth >= breakpointWidth);
+      const result = window.innerWidth >= breakpointWidth;
+      console.log(result, isReady);
+      if (isAboveBreakpoint !== result) {
+        setIsAboveBreakpoint(result);
+        if (isReady) {
+          console.log("Refreshing due to device change");
+          window.location.reload();
+        }
+      }
+      setIsReady(true);
     };
 
     checkBreakpoint();
     window.addEventListener("resize", checkBreakpoint);
 
     return () => window.removeEventListener("resize", checkBreakpoint);
-  }, [breakpoint]);
+  }, [breakpoint, isAboveBreakpoint, isReady]);
 
   return isAboveBreakpoint;
 }

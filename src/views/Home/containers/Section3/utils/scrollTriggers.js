@@ -9,7 +9,7 @@ export function setupScrollTriggers(sectionRef, softSvgRef, centerRef) {
       softSvgRef.current,
       { height: "0vw" },
       {
-        height: "15vw",
+        height: "20vw",
         scrollTrigger: {
           trigger: sectionRef.current,
           start: "50 bottom",
