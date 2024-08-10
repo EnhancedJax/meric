@@ -52,7 +52,10 @@ function LangSelector({ lang, text }) {
     <motion.button
       aria-label={`Change language to ${lang}`}
       variants={langSelectorItem}
-      onClick={() => i18n.changeLanguage(lang)}
+      onClick={() => {
+        i18n.changeLanguage(lang);
+        window.location.reload();
+      }}
       className={`flex items-center justify-center w-8 h-8 text-sm rounded-full ${
         i18n.language === lang ? "bg-text text-white" : "bg-white text-text"
       }`}

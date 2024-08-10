@@ -84,7 +84,6 @@ export const PRODUCT_IMAGES = [
     t: "0",
     r: "auto",
     parallax: 0,
-    name: "Athleisure Shoes",
   },
   {
     src: "https://placehold.co/400x400",
@@ -94,7 +93,6 @@ export const PRODUCT_IMAGES = [
     t: "5vh",
     r: "10vw",
     parallax: -50,
-    name: "Sportswear",
   },
   {
     src: "https://placehold.co/300x50",
@@ -104,7 +102,6 @@ export const PRODUCT_IMAGES = [
     t: "40vh",
     r: "auto",
     parallax: -150,
-    name: "Boots",
   },
   {
     src: "https://placehold.co/500x150",
@@ -114,7 +111,6 @@ export const PRODUCT_IMAGES = [
     t: "0",
     r: "auto",
     parallax: -400,
-    name: "Slippers",
   },
   {
     src: "https://placehold.co/300x100",
@@ -124,7 +120,6 @@ export const PRODUCT_IMAGES = [
     t: "0",
     r: "20vw",
     parallax: 0,
-    name: "Sandals",
   },
   {
     src: "https://placehold.co/500x150",
@@ -134,7 +129,6 @@ export const PRODUCT_IMAGES = [
     t: "0",
     r: "auto",
     parallax: -60,
-    name: "Waterproof/ Membrane Footwear",
   },
   {
     src: "https://placehold.co/400x100",
@@ -144,7 +138,6 @@ export const PRODUCT_IMAGES = [
     t: "0",
     r: "5vw",
     parallax: -1000,
-    name: "Vulcanized and Cemented",
   },
   {
     src: "https://placehold.co/400x100",
@@ -154,7 +147,6 @@ export const PRODUCT_IMAGES = [
     t: "0",
     r: "auto",
     parallax: -50,
-    name: "Casual",
   },
   {
     src: "https://placehold.co/400x400",
@@ -164,7 +156,6 @@ export const PRODUCT_IMAGES = [
     t: "-30vh",
     r: "10vw",
     parallax: -50,
-    name: "Formal",
   },
   {
     src: "https://placehold.co/400x100",
@@ -174,7 +165,6 @@ export const PRODUCT_IMAGES = [
     t: "0",
     r: "auto",
     parallax: -50,
-    name: "Kidswear",
   },
 ];
 
@@ -186,7 +176,6 @@ export const METRIC_ITEMS = [
 
 export const CLIENTS = [
   {
-    name: "Disney",
     img: "disney",
   },
 ];

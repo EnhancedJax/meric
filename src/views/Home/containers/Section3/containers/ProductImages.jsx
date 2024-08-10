@@ -1,7 +1,11 @@
 import { motion, useTransform } from "framer-motion";
 import { PRODUCT_IMAGES } from "../../../../../constants";
 
-export default function ProductImages({ scrollYProgress, isMd }) {
+export default function ProductImages({
+  scrollYProgress,
+  isMd,
+  // setActiveIndex,
+}) {
   const parallax = (amount) =>
     useTransform(scrollYProgress, [0, 1], [0, amount]);
 
@@ -14,7 +18,7 @@ export default function ProductImages({ scrollYProgress, isMd }) {
           className="relative flex-grow w-full"
         >
           <motion.div
-            className="absolute overflow-visible"
+            className="absolute z-10 overflow-visible"
             style={{
               width: isMd ? image.w : image.w * 0.5,
               height: isMd ? image.h : image.h * 0.5,
@@ -23,15 +27,18 @@ export default function ProductImages({ scrollYProgress, isMd }) {
               top: image.t,
               y: parallax(image.parallax),
             }}
+            // whileHover={{ scale: 1.1 }}
+            // onMouseEnter={() => setActiveIndex(index)}
+            // onMouseLeave={() => setActiveIndex(null)}
           >
             <img
               className="object-cover w-full h-full"
               src={image.src}
               alt={`${image.name}-${index}`}
             />
-            <p className="w-full p-1 font-medium text-center drop-shadow-md">
+            {/* <p className="hidden w-full p-1 font-medium text-center drop-shadow-md md:block">
               {image.name}
-            </p>
+            </p> */}
           </motion.div>
         </div>
       ))}

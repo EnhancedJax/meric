@@ -3,7 +3,7 @@ import { useRef } from "react";
 
 export default function H1({ text }) {
   const ref = useRef(null);
-  const inView = useInView(ref, { once: true });
+  const inView = useInView(ref, {});
 
   return (
     <div

@@ -13,4 +13,5 @@ export const GradientBlob = styled.div`
   top: 20%;
   transform: translate(-50%, -50%);
   z-index: -1;
+  pointer-events: none;
 `;

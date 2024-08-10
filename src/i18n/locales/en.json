@@ -38,7 +38,20 @@
     "section3": {
       "h1": "Our Products",
       "title": "We offer footwear for all gender, every occasion, and with different properties.",
-      "p": "All ages and genders ⋅ Fashion / Sports / Leisure"
+      "p": "All ages and genders ⋅ Fashion / Sports / Leisure",
+
+      "shoeNames": {
+        "shoe0": "Athleisure Shoes",
+        "shoe1": "Sportswear",
+        "shoe2": "Boots",
+        "shoe3": "Slippers",
+        "shoe4": "Sandals",
+        "shoe5": "Waterproof / Membrane Footwear",
+        "shoe6": "Vulcanized and Cemented",
+        "shoe7": "Casual",
+        "shoe8": "Formal",
+        "shoe9": "Kidswear"
+      }
     },
     "contact": {
       "h1": "Let's work together",

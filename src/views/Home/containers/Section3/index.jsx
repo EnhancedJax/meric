@@ -17,6 +17,7 @@ export default function Section3() {
     target: sectionRef,
     offset: ["start end", "end start"],
   });
+  // const [activeIndex, setActiveIndex] = useState(null);
 
   useEffect(() => {
     const cleanup = setupScrollTriggers(sectionRef, softSvgRef, centerRef);
@@ -31,8 +32,17 @@ export default function Section3() {
       data-cursor-color="text"
     >
       <SoftSvg ref={softSvgRef} />
-      <CenterContent ref={centerRef} scrollYProgress={scrollYProgress} t={t} />
-      <ProductImages scrollYProgress={scrollYProgress} isMd={isMd} />
+      <CenterContent
+        ref={centerRef}
+        scrollYProgress={scrollYProgress}
+        t={t}
+        // activeIndex={activeIndex}
+      />
+      <ProductImages
+        scrollYProgress={scrollYProgress}
+        isMd={isMd}
+        // setActiveIndex={setActiveIndex}
+      />
     </section>
   );
 }

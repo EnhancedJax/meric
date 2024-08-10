@@ -34,6 +34,7 @@ export default function Cursor() {
   const [cursorIconColor, setCursorIconColor] = useState("white");
   const cursorWrapperRef = useRef(null);
   const cursorCircleRef = useRef(null);
+  const mousePositionRef = useRef({ x: 0, y: 0 });
   const isTouchDevice = "ontouchstart" in window;
 
   useEffect(() => {
@@ -43,27 +44,33 @@ export default function Cursor() {
       return;
     }
 
+    const updateCursorPosition = () => {
+      const { x, y } = mousePositionRef.current;
+      gsap.to(cursorWrapper, {
+        x: x - 10,
+        y: y - 10,
+        duration: 0.5,
+        ease: "power2.out",
+      });
+    };
+
+    const animationFrame = gsap.ticker.add(updateCursorPosition);
+
     window.addEventListener("mousemove", (e) => {
-      const { target, x, y } = e;
+      const { target, clientX, clientY } = e;
+      mousePositionRef.current = { x: clientX, y: clientY };
+
       // check if the mouse cursor is over some link or button
       const toExpand =
         target?.closest("a") ||
         target?.closest("button") ||
         target?.closest("[data-cursor-icon]");
 
-      // using the GSAP power to animate some properties
-      gsap.to(cursorWrapper, {
-        x: x - 10,
-        y: y - 10,
-        duration: 1,
-        ease: "elastic",
-      });
-
       gsap.to(cursorCircle, {
         opacity: toExpand ? 0.5 : 0.7,
         transform: `scale(${toExpand ? 3.5 : 1})`,
-        duration: 1,
-        ease: "elastic",
+        duration: 0.5,
+        ease: "power2.out",
       });
 
       const targetCursorIcon = target?.closest("[data-cursor-icon]");
@@ -109,6 +116,10 @@ export default function Cursor() {
         ease: "power2.out",
       });
     });
+
+    return () => {
+      gsap.ticker.remove(animationFrame);
+    };
   }, []);
 
   return (
