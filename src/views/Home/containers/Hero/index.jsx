@@ -44,8 +44,13 @@ export default function Hero() {
         </motion.div>
         <WhiteBlob className="h-[200%] md:h-[150%]" />
       </div>
-      <div className="z-20 max-h-[60%] max-w-[80%] relative">
-        <CycleImages images={images} interval={1000} className="h-full" />
+      <div
+        className="z-20 max-h-[60%] max-w-[80%] relative"
+        style={{
+          aspectRatio: 24 / 11,
+        }}
+      >
+        <CycleImages images={images} interval={1000} className="" />
         <p className="absolute w-full mt-8 text-sm text-center md:text-xl">
           {t("home.hero.p")}
         </p>

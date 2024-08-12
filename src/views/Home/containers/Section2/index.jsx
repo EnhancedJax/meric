@@ -35,7 +35,7 @@ export default function Section2() {
       <SectionHeader t={t} />
       <section
         ref={sectionRef}
-        className="relative w-full h-screen py-4 overflow-hidden"
+        className="relative w-full h-screen pt-4 overflow-hidden"
       >
         {isMd && (
           <AnimatedImages

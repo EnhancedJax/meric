@@ -3,7 +3,7 @@ import React from "react";
 const SoftSvg = React.forwardRef((props, ref) => {
   return (
     <div
-      className="absolute top-0 w-full h-0 -translate-y-full text-primary"
+      className="absolute w-full h-0 overflow-visible bottom-full text-primary"
       ref={ref}
     >
       <svg
