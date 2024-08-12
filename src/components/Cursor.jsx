@@ -35,6 +35,9 @@ export default function Cursor() {
   const cursorWrapperRef = useRef(null);
   const cursorCircleRef = useRef(null);
   const mousePositionRef = useRef({ x: 0, y: 0 });
+  const lastMousePositionRef = useRef({ x: 0, y: 0 });
+  const velocityRef = useRef({ x: 0, y: 0 });
+  const lastRotationRef = useRef(0);
   const isTouchDevice = "ontouchstart" in window;
 
   useEffect(() => {
@@ -46,10 +49,44 @@ export default function Cursor() {
 
     const updateCursorPosition = () => {
       const { x, y } = mousePositionRef.current;
+      const { x: lastX, y: lastY } = lastMousePositionRef.current;
+
+      // Calculate velocity
+      const dX = x - lastX;
+      const dY = y - lastY;
+      velocityRef.current = { x: dX, y: dY };
+
+      // Update last position
+      lastMousePositionRef.current = { x, y };
+
+      // Calculate scale and rotation based on velocity
+      const maxVelocity = 50; // Adjust this value to change sensitivity
+      const velocityMagnitude = Math.sqrt(dX ** 2 + dY ** 2);
+      const scaleX = 1 + Math.min(velocityMagnitude / maxVelocity, 1) * 2;
+      const r = (Math.atan2(dY, dX) * 180) / Math.PI;
+
+      // Calculate the difference between the new angle and the last rotation
+      let dR = r - (lastRotationRef.current % 360);
+
+      // Adjust the difference to ensure the shortest rotation path
+      if (dR > 180) {
+        dR -= 360;
+      } else if (dR < -180) {
+        dR += 360;
+      }
+
+      // Calculate the new continuous rotation
+      const rotation = lastRotationRef.current + dR;
+
+      // Update the last rotation reference
+      lastRotationRef.current = rotation;
+
       gsap.to(cursorWrapper, {
         x: x - 10,
         y: y - 10,
-        duration: 0.5,
+        duration: 0.3,
+        rotation: rotation,
+        scaleX: scaleX,
         ease: "power2.out",
       });
     };
@@ -123,15 +160,18 @@ export default function Cursor() {
   }, []);
 
   return (
-    <CursorWrapper ref={cursorWrapperRef}>
-      <CursorCircle
-        ref={cursorCircleRef}
-        className={`bg-${cursorColor}`}
-      ></CursorCircle>
-      <CursorIcon>
-        <LucideIcon icon={cursorIcon} color={cursorIconColor} />
-      </CursorIcon>
-    </CursorWrapper>
+    <>
+      <CursorWrapper ref={cursorWrapperRef}>
+        <CursorCircle
+          ref={cursorCircleRef}
+          className={`bg-${cursorColor}`}
+        ></CursorCircle>
+        <CursorIcon>
+          <LucideIcon icon={cursorIcon} color={cursorIconColor} />
+        </CursorIcon>
+      </CursorWrapper>
+      {/* Add graph here */}
+    </>
   );
 }
 
