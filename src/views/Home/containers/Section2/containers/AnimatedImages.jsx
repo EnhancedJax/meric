@@ -76,13 +76,20 @@ const AnimatedImage = ({
       alt={`Section2-image-${imgIndex}`}
       animate={
         shouldAnimate
-          ? { y: 0, opacity: 1 }
-          : { y: direction * 300, opacity: 0 }
+          ? { y: 0, opacity: 1, filter: "blur(0px)", scale: 1 }
+          : {
+              y: direction * 300,
+              opacity: 0,
+              filter: "blur(20px)",
+              scale: 1.5,
+              transition: { filter: "linear" },
+            }
       }
       transition={{
         duration: 0.3 + imgIndex * 0.1,
         delay: shouldAnimate && !noDelay ? 0.3 : 0,
         ease: "anticipate",
+        filter: {},
       }}
     />
   );

@@ -19,7 +19,7 @@ export default function ContentArea({
       ref={contentRef}
       className="relative w-2/3 pr-6 md:pr-0 md:pt-4 left-1/3 md:left-[37%] md:w-[40%]"
     >
-      <MP className="absolute top-0 hidden text-3xl md:block">
+      <MP className="absolute top-0 hidden text-3xl lg:block">
         {t("home.section2.p")}
       </MP>
       <Spacer
@@ -29,9 +29,17 @@ export default function ContentArea({
         }px - 32px)`}
       />
       {[0, 1, 2].map((i, index) => (
-        <div key={`Section2-content-${i}`}>
+        <div
+          key={`Section2-content-${i}`}
+          ref={i === 0 ? content1Ref : index === 1 ? content2Ref : content3Ref}
+        >
           {!isMd && (
-            <div className="relative w-full h-[35vh] mb-12 ">
+            <div
+              className="relative w-full mb-12"
+              style={{
+                aspectRatio: 2 / 3,
+              }}
+            >
               <AnimatedImageGroup
                 activePart={activePart}
                 index={i}
@@ -41,11 +49,8 @@ export default function ContentArea({
             </div>
           )}
           <div
-            ref={
-              i === 0 ? content1Ref : index === 1 ? content2Ref : content3Ref
-            }
             className={`text-text ${
-              index !== 2 ? "mb-[150px] md:mb-[300px]" : ""
+              index !== 2 ? "mb-[100px] md:mb-[300px]" : ""
             } w-full`}
           >
             <h2 className="mb-6 -ml-10 text-4xl md:ml-0">

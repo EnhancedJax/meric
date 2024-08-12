@@ -1,5 +1,4 @@
 import { motion, useScroll, useTransform } from "framer-motion";
-import { ArrowDown } from "lucide-react";
 import { useRef } from "react";
 import { useTranslation } from "react-i18next";
 import VerticalMarquee from "../../../../components/VerticalMarquee";
@@ -45,11 +44,12 @@ export default function Hero() {
         </motion.div>
         <WhiteBlob className="h-[200%] md:h-[150%]" />
       </div>
-      <CycleImages
-        images={images}
-        interval={1000}
-        className="z-20 max-h-[60%] max-w-[80%]"
-      />
+      <div className="z-20 max-h-[60%] max-w-[80%] relative">
+        <CycleImages images={images} interval={1000} className="h-full" />
+        <p className="absolute w-full mt-8 text-sm text-center md:text-xl">
+          {t("home.hero.p")}
+        </p>
+      </div>
       <VerticalMarquee
         className="absolute w-full h-screen overflow-hidden"
         style={{
@@ -60,14 +60,6 @@ export default function Hero() {
       >
         <Background className="w-full h-screen border-b border-text-5" />
       </VerticalMarquee>
-      <div className="absolute flex mt-[70%] md:text-white md:shadow md:mt-0 md:bottom-0 lg:right-0 lg:pr-24">
-        <p className=" md:bg-text pl-10 pr-10 md:pr-20 py-4 rounded-tl-[40px] md:text-xl text-center">
-          {t("home.hero.p")}
-        </p>
-        <div className="px-8 py-5 -ml-10 bg-primary rounded-tl-[40px] rounded-br-[40px] md:block hidden">
-          <ArrowDown />
-        </div>
-      </div>
     </section>
   );
 }

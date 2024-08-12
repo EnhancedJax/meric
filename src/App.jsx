@@ -2,7 +2,12 @@ import { ReactLenis } from "lenis/react";
 import { ThemeProvider } from "next-themes";
 import React from "react";
 import { I18nextProvider } from "react-i18next";
-import { Route, BrowserRouter as Router, Routes } from "react-router-dom";
+import {
+  Navigate,
+  Route,
+  BrowserRouter as Router,
+  Routes,
+} from "react-router-dom";
 import "./App.css";
 import Cursor from "./components/Cursor";
 import Footer from "./containers/Footer";
@@ -22,6 +27,7 @@ function App() {
             {isMd ? <Header /> : <MobileNav />}
             <Routes>
               <Route path="/" element={<HomePage />} />
+              <Route path="*" element={<Navigate replace to="/" />} />
             </Routes>
             <Footer />
             <Cursor />

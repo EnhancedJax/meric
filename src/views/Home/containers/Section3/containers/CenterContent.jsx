@@ -4,7 +4,7 @@ import H1 from "../../../../../components/H1";
 import { PRODUCT_IMAGES } from "../../../../../constants";
 import { GradientBlob } from "../styles";
 
-const CenterContent = React.forwardRef(({ scrollYProgress, t }, ref) => {
+const CenterContent = React.forwardRef(({ scrollYProgress, t, isMd }, ref) => {
   const inView = useInView(ref);
   const parallax = (amount) =>
     useTransform(scrollYProgress, [0, 1], [0, amount]);
@@ -16,7 +16,7 @@ const CenterContent = React.forwardRef(({ scrollYProgress, t }, ref) => {
     >
       <motion.div
         className="relative w-full md:w-[500px] md:p-0 p-6"
-        style={{ y: parallax(-100) }}
+        style={{ y: parallax(isMd ? -100 : 0) }}
       >
         <GradientBlob />
         <div className="mb-3 w-fit">

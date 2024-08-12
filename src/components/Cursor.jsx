@@ -62,7 +62,7 @@ export default function Cursor() {
       // Calculate scale and rotation based on velocity
       const maxVelocity = 50; // Adjust this value to change sensitivity
       const velocityMagnitude = Math.sqrt(dX ** 2 + dY ** 2);
-      const scaleX = 1 + Math.min(velocityMagnitude / maxVelocity, 1) * 2;
+      const scaleX = 1 + Math.min(velocityMagnitude / maxVelocity, 1) * 1;
       const r = (Math.atan2(dY, dX) * 180) / Math.PI;
 
       // Calculate the difference between the new angle and the last rotation

@@ -6,6 +6,7 @@ const fullConfig = resolveConfig(tailwindConfig);
 
 export function useTailwindBreakpoint(breakpoint) {
   const [isAboveBreakpoint, setIsAboveBreakpoint] = useState(false);
+  const [isPortrait, setIsPortrait] = useState(false);
   const [isReady, setIsReady] = useState(false);
 
   useEffect(() => {
@@ -21,10 +22,14 @@ export function useTailwindBreakpoint(breakpoint) {
       const result = window.innerWidth >= breakpointWidth;
       if (isAboveBreakpoint !== result) {
         setIsAboveBreakpoint(result);
-        if (isReady) {
-          console.log("Refreshing due to device change");
-          window.location.reload();
+      }
+      const newIsPortait = window.innerWidth < window.innerHeight;
+      if (isReady) {
+        if (isPortrait !== newIsPortait) {
+          window.location.reload(); // device rotated
         }
+      } else {
+        setIsPortrait(newIsPortait);
       }
       setIsReady(true);
     };

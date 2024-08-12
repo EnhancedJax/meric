@@ -36,7 +36,7 @@ export function setupScrollTrigger(
           });
 
         const sectionHeight = section.offsetHeight;
-        const threshold = isMd ? 0.6 : 1;
+        const threshold = isMd ? 0.6 : 0.8;
 
         contentRefs.forEach((contentRef, index) => {
           const contentElement = contentRef.current;
