@@ -1,5 +1,7 @@
 import { BookCheck, Droplets, Sparkles, Split } from "lucide-react";
 
+export const SHOE_COUNT = 13;
+
 export const OFFICES = [
   {
     name: "Hong Kong HQ",
