@@ -2,11 +2,10 @@ import { motion, useScroll, useTransform } from "framer-motion";
 import { useRef } from "react";
 import { useTranslation } from "react-i18next";
 import VerticalMarquee from "../../../../components/VerticalMarquee";
+import { SHOE_COUNT } from "../../../../constants";
 import Background from "./containers/Background";
 import CycleImages from "./containers/CycleImages";
 import { WhiteBlob } from "./styles";
-
-const images = ["shoes/0.png", "shoes/1.png"];
 
 export default function Hero() {
   const { t } = useTranslation();
@@ -22,7 +21,7 @@ export default function Hero() {
       ref={sectionRef}
       className="flex items-center flex-col justify-center w-full h-screen p-6 border-b-[0.5px] bg-background border-text-50 md:p-12"
     >
-      <div className="absolute z-10 flex justify-center w-full mb-64 overflow-hidden md:mb-40 lg:mb-80">
+      <div className="absolute z-10 flex justify-center w-full mb-64 overflow-hidden md:mb-64">
         <motion.div
           style={{
             scale: useTransform(scrollYProgress, [0, 1], [1, 2]),
@@ -45,12 +44,20 @@ export default function Hero() {
         <WhiteBlob className="h-[200%] md:h-[150%]" />
       </div>
       <div
-        className="z-20 max-h-[60%] max-w-[80%] relative"
+        className="z-20 w-[80%] md:max-w-[750px] md:w-auto md:h-auto relative"
         style={{
           aspectRatio: 24 / 11,
         }}
       >
-        <CycleImages images={images} interval={1000} className="" />
+        <CycleImages
+          images={Array.from(
+            { length: SHOE_COUNT },
+            (_, index) => `shoes/Shoe${index + 1}.webp`
+          )}
+          // images={[]}
+          interval={400}
+          className="w-full h-full"
+        />
         <p className="absolute w-full mt-8 text-sm text-center md:text-xl">
           {t("home.hero.p")}
         </p>
